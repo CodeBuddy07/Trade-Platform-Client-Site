@@ -1,0 +1,42 @@
+.buttonActive {
+    position: relative;
+    display: inline-block; /* Ensures proper width adjustment for the button */
+  }
+  
+  .buttonActive::after {
+    content: ''; /* Creates the border as a pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially hidden */
+    height: 2px; /* Adjust thickness of the border */
+    background-color: #007bff; /* Set the color of the border */
+    transition: width 0.3s ease; /* Smooth animation for the border */
+  }
+  
+  .buttonActive::after {
+    width: 100%; /* Expands to the full width of the button on hover */
+  }
+
+
+  .buttonHover {
+    position: relative;
+    display: inline-block; /* Ensures proper width adjustment for the button */
+  }
+  
+  .buttonHover::after {
+    content: ''; /* Creates the border as a pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially hidden */
+    height: 2px; /* Adjust thickness of the border */
+    background-color: #75b2f2; /* Set the color of the border */
+    transition: width 0.3s ease; /* Smooth animation for the border */
+  }
+  
+  .buttonHover:hover::after {
+    width: 100%; /* Expands to the full width of the button on hover */
+  }
+  
+  

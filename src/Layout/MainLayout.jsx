@@ -10,14 +10,14 @@ const MainLayout = () => {
 
 
     const navContent = <ul className="space-x-2">
-        <NavLink to='/' className={`${location.pathname === '/' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Home</NavLink>
+        <NavLink to='/' className={`${location.pathname === '/' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Home</NavLink>
 
-        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>How it works</NavLink>
-        <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
-        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Cost guides</NavLink>
-        <NavLink to='/' className={` button-1 hover:bg-gray-100  transition-all rounded-md p`}>Post a job</NavLink>
-        <NavLink to='/' className={` button-2 hover:bg-gray-100  transition-all rounded-md p`}>Trade SignUp</NavLink>
-        <NavLink to='/' className={` hover:bg-gray-100  transition-all rounded-md p`}>Login</NavLink>
+        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>How it works</NavLink>
+        <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
+        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Cost guides</NavLink>
+        <NavLink to='/' className={` button-1   transition-all rounded-md p`}>Post a job</NavLink>
+        <NavLink to='/' className={` button-2   transition-all rounded-md p`}>Trade SignUp</NavLink>
+        <NavLink to='/' className={`   transition-all rounded-md p`}>Login</NavLink>
 
 
         {/* {
@@ -61,19 +61,21 @@ const MainLayout = () => {
 
             <div className="drawer bg-transparent ">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col">
+                <div className="drawer-content  flex flex-col">
                     {/* Navbar */}
-                    <div className="navbar max-w-7xl mx-auto">
-                        <div className="flex-none lg:hidden">
-                            <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn bg-transparent border-none">
-                                <IoMenuSharp size={30} className="cursor-pointer"></IoMenuSharp>
-                            </label>
-                        </div>
-                        <div className="mx-2 flex-1 px-2 hidden lg:block">
-                            <img className="w-[150px] h-[60px]" src={logo} alt="" />
-                        </div>
-                        <div className="hidden  flex-none lg:block">
-                            {navContent}
+                    <div className="navbar shadow-md; rounded-md bg-[rgba(255,255,255,0.79)] text-gray-700">
+                        <div className="max-w-7xl mx-auto w-full">
+                            <div className="flex-none lg:hidden">
+                                <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn bg-transparent border-none">
+                                    <IoMenuSharp size={30} className="cursor-pointer"></IoMenuSharp>
+                                </label>
+                            </div>
+                            <div className="mx-2 flex-1 px-2 hidden lg:block">
+                                <img className="w-[150px] h-[60px]" src={logo} alt="" />
+                            </div>
+                            <div className="hidden  flex-none lg:block">
+                                {navContent}
+                            </div>
                         </div>
                     </div>
                     {/* Page content here */}
@@ -83,15 +85,15 @@ const MainLayout = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu space-y-4
-                     bg-base-200 min-h-full w-80 p-4">
-                        <NavLink to='/' className={`${location.pathname === '/' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Home</NavLink>
+                     bg-gray-600  min-h-full w-80 p-4">
+                        <NavLink to='/' className={`${location.pathname === '/' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>Home</NavLink>
 
-                        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>How it works</NavLink>
-                        <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
-                        
-                        <NavLink to='/' className={` button-1 hover:bg-gray-100  transition-all rounded-md `}>Post a job</NavLink>
-                        <NavLink to='/' className={` button-2 hover:bg-gray-100  transition-all rounded-md `}>Trade SignUp</NavLink>
-                        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}    hover:bg-gray-100 py-1 transition-all  rounded-md px-5`}>Login</NavLink>
+                        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>How it works</NavLink>
+                        <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
+
+                        <NavLink to='/' className={` button-1  transition-all rounded-md `}>Post a job</NavLink>
+                        <NavLink to='/' className={` button-2  transition-all rounded-md `}>Trade SignUp</NavLink>
+                        <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>Login</NavLink>
                     </ul>
                 </div>
             </div>

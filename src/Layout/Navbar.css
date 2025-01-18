@@ -1,5 +1,4 @@
 .buttonActive {
-    position: relative;
     display: inline-block; /* Ensures proper width adjustment for the button */
   }
   

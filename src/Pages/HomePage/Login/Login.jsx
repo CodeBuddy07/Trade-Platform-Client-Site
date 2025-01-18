@@ -13,7 +13,7 @@ const Login = () => {
                             type="email"
                             id="email"
                             placeholder="Email"
-                            className="px-4 py-2  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-pink-600 bg-gray-50 "
+                            className="px-4 py-3  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-gray-500 bg-gradient-to-b from-gray-200 to-gray-50  "
                         />
 
                     </div>
@@ -30,7 +30,7 @@ const Login = () => {
                                 type="email"
                                 id="email"
                                 placeholder="Email"
-                                className="px-4 py-2  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-pink-600 bg-gray-50 "
+                                className="px-4 py-3  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-gray-500 bg-gradient-to-b from-gray-200 to-gray-50  "
                             />
 
                         </div>
@@ -43,7 +43,7 @@ const Login = () => {
                         login
                     </button>
                     <p className="text-center">Or</p>
-                    <button className="w-full text-xl btn rounded-full text-blue-600 border-gradient-to-r  from-blue-700 to-blue-400 border-none shadow-sm shadow-blue-500 hover:shadow-blue-600 hover:shadow-md ">
+                    <button className="w-full text-xl btn bg-white hover:bg-white rounded-full text-blue-600 border-blue-400   hover:shadow-blue-600 hover:shadow-sm ">
                         Login by email link
                     </button>
 

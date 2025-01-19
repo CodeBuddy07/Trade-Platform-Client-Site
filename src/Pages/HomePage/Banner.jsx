@@ -23,10 +23,32 @@ const Banner = () => {
                             It's FREE and there are no obligations
                         </p>
                         <div>
-                            <div className="flex items-center justify-between bg-white border border-gray-300 rounded-md shadow-md px-4 py-2 max-w-md mx-auto">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div className="flex items-center justify-between bg-white border border-gray-300 rounded-md shadow-md px-4 py-2 max-w-md mx-auto">
                                 {/* Search Icon */}
                                 <div className="flex items-center text-gray-400">
-                                <CiSearch size={30}></CiSearch> 
+                                    <CiSearch size={30}></CiSearch>
                                 </div>
 
                                 {/* Input Field */}
@@ -41,6 +63,34 @@ const Banner = () => {
                                     Get Started
                                 </button>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>

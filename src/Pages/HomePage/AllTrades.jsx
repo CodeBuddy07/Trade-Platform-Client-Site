@@ -3,13 +3,13 @@ import plumber from './../../files/plumber.jpg'
 
 const AllTrades = () => {
     return (
-        <div className='flex  flex-col md:px-10 lg:p-20 p-5 py-20 justify-center items-center bg-[rgba(12,12,12,.2)] text-gray-700'>
+        <div className='flex  flex-col md:px-10 lg:p-20 p-5 py-20 justify-center items-center  text-gray-700'>
             <div className=''>
-                <h1 className='text-5xl text-white font-bold'>All trades</h1>
-                <hr className='border-2 border-pink-600 w-3/12' />
+                <h1 className='text-5xl  font-bold'>All trades</h1>
+                <hr className='border-2 border-pink-600 mt-2 w-3/12' />
             </div>
             <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto p-5 md:p-10 lg:p-20'>
-                <div className=' cardBg border bg-white border-gray-300 rounded-md  shadow-mdx'>
+                <div className=' cardBg border bg-white border-gray-300 shadow-2xl rounded-md  '>
                     <div className=''>
                         <img className='rounded-md' src={plumber} alt="" />
                         <div className='p-4 space-y-2'>
@@ -30,9 +30,9 @@ const AllTrades = () => {
                     </div>
 
                 </div>
-                <div className='cardBg border bg-white border-gray-300 rounded-md  shadow-mdx'>
-                    <div className=''>
-                        <img className='rounded-md' src={plumber} alt="" />
+                <div className='cardBg border hover:shadow-2xl bg-white border-gray-300  rounded-md  '>
+                    <div className=''> 
+                        <img className='rounded-md ' src={plumber} alt="" />
                         <div className='p-4 space-y-2'>
                             <h4 className='text-2xl'>Electrician</h4>
                             <hr className='w-1/12 border-2' />
@@ -51,7 +51,7 @@ const AllTrades = () => {
                     </div>
 
                 </div>
-                <div className='cardBg border bg-white border-gray-300 rounded-md  shadow-mdx'>
+                <div className='cardBg border bg-white border-gray-300 shadow-2xl rounded-md  '>
                     <div className=''>
                         <img className='rounded-md' src={plumber} alt="" />
                         <div className='p-4 space-y-2'>

@@ -5,7 +5,7 @@ import { BsShieldCheck } from 'react-icons/bs';
 
 const WhyChooseUs = () => {
     return (
-        <div className='text-center space-y-2 md:px-20 px-5 py-20 bg-[rgba(94,94,94,0.8)]'>
+        <div className='text-center space-y-2 md:px-20 px-5 py-20 bg-gray-200'>
             <h1 className='text-4xl font-bold'>Why MyBuilder is Your Trusted Choice</h1>
             <p className="max-w-3xl mx-auto ">Finding the right trades person for your project can be challenging. MyBuilder makes it simple and reliable to connect with trusted professionals.</p>
             <div className='flex text-start flex-col md:flex-row md:p-20 gap-10 justify-center items-center max-w-7xl mx-auto'>

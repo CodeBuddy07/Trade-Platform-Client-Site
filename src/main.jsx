@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')).render(
    
     // backgroundImage: "https://images.pexels.com/photos/1693095/pexels-photo-1693095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 }}
-   className=' text-white relative blur-bg-container'>
+   className='  relative '>
    <RouterProvider router={Routes} />
    </div>
    

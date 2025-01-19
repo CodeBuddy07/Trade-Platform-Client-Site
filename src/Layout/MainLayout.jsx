@@ -11,13 +11,13 @@ const MainLayout = () => {
 
     const navContent = <ul className="space-x-2">
         <NavLink to='/' className={`${location.pathname === '/' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Home</NavLink>
-
         <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>How it works</NavLink>
         <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
         <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Cost guides</NavLink>
-        <NavLink to='/' className={` button-1   transition-all rounded-md p`}>Post a job</NavLink>
-        <NavLink to='/' className={` button-2   transition-all rounded-md p`}>Trade SignUp</NavLink>
-        <NavLink to='/' className={`   transition-all rounded-md p`}>Login</NavLink>
+        <NavLink to='/' className={`btn btn-sm border-pink-600 hover:bg-pink-800  px-8   font-bold text-white bg-pink-600  transition-all rounded-md text-[18px]`}>Post a job</NavLink>
+        <NavLink to='/' className={`btn btn-sm border-green-600 hover:bg-green-800  px-8    text-white bg-green-600  transition-all rounded-md text-[18px]`}>Trade signup</NavLink>
+       
+        <NavLink to='/account/login' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Login</NavLink>
 
 
         {/* {

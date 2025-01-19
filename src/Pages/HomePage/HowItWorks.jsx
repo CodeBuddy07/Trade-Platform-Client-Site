@@ -4,7 +4,7 @@ import image3 from './../../files/contact.jpg'
 
 const HowItWorks = () => {
     return (
-        <div className='text-center text-gray-700 p-24 space-y-2 bg-[rgba(255,255,255,0.8)]'>
+        <div className='text-center  text-gray-700 p-24 space-y-2 bg-[rgba(255,255,255,0.8)]'>
             <h1 className='md:text-4xl text-2xl'>How it works</h1>
             <p className='md:text-xl text-sm'>Easily find skilled professionals in your area with our fast and free online service.</p>
             <div>

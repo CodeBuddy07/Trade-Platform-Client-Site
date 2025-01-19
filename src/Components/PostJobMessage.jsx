@@ -1,7 +1,7 @@
 
 const PostJobMessage = () => {
     return (
-        <div className="text-center bg-[rgba(12,12,12,.9)] md:px-20 px-5 py-20 ">
+        <div className="text-center  md:px-20 px-5 py-20 ">
            <div className="max-w-6xl mx-auto space-y-4">
 
            <h2 className="md:text-5xl text-3xl font-bold">Ready to hire the perfect tradesPerson for your job? </h2>

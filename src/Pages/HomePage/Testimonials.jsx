@@ -79,7 +79,7 @@ const Testimonials = () => {
 
   return (
     <div className=''>
-      <div className=" lg:px-20 py-20 md:p-10 p-2 relative bg-[rgba(12,12,12,0.62)]">
+      <div className=" lg:px-20 py-20 md:p-10 p-2 relative ]">
 
         <h1 className='text-5xl text-center text-white font-bold'>Testimonials</h1>
 

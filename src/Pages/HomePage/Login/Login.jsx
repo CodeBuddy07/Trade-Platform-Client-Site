@@ -35,6 +35,14 @@ const Login = () => {
 
                         </div>
                     </div>
+                    <div className="flex mt-4 items-center justify-between ">
+                        <div className="flex items-center gap-4">
+                            <input type="checkbox" className="checkbox checkbox-sm" /><p>Remember me</p>
+                        </div>
+                        <div className="">
+                            <Link to={'/account/password-reset'}><p className="hover:underline underline-offset-4">Forgot password</p></Link>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Email Field */}
@@ -51,8 +59,8 @@ const Login = () => {
 
                 <div>
                     <p className="text-center"><span className="italic">Haven’t joined yet?</span> <Link
-                    to={'/register-as'}
-                    className="text-pink-600 hover:underline underline-offset-4">Create an account now!</Link></p>
+                        to={'/register-as'}
+                        className="text-pink-600 hover:underline underline-offset-4">Create an account now!</Link></p>
                 </div>
 
             </form>

@@ -127,6 +127,24 @@ body {
     padding:5px 10px;
     margin:0px 5px;
 }
+.image-container {
+  display: block;
+  width: 300px; /* Set container size */
+  height: 200px; /* Set container size */
+  overflow: hidden; /* Hide overflowing image parts */
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease; /* Smooth effect */
+  transform-origin: center; /* Zoom from the center */
+}
+
+.image-container:hover img {
+  transform: scale(1.2); /* Zoom in effect */
+}
 
 /* Main container */
 .blur-bg-container {

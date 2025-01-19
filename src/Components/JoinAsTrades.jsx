@@ -2,9 +2,9 @@ import image from './../files/joinAsTrader.jpg'
 
 const JoinAsTrades = () => {
     return (
-        <div className='md:px-20 py-20 text-black  p-5'>
+        <div className='md:px-20  text-black  p-5'>
 
-            <div className='flex flex-col md:flex-row rounded-md bg-[rgba(255,255,255,0.7)] md:p-20 p-5 gap-20 justify-center items-center'>
+            <div className='flex flex-col md:flex-row rounded-md bg-[rgba(225,225,225,0.7)] md:p-20 p-5 gap-20 justify-center items-center'>
                 <img className='w-[400px] object-cover rounded-md h-[400px]' src={image} alt="" />
                 <div className='space-y-8'>
                     <h3 className='text-3xl font-bold'>Looking for More Work?</h3>

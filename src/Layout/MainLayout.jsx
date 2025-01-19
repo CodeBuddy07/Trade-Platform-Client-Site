@@ -15,7 +15,7 @@ const MainLayout = () => {
         <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
         <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Cost guides</NavLink>
         <NavLink to='/' className={`btn btn-sm border-pink-600 hover:bg-pink-800  px-8   font-bold text-white bg-pink-600  transition-all rounded-md text-[18px]`}>Post a job</NavLink>
-        <NavLink to='/' className={`btn btn-sm border-green-600 hover:bg-green-800  px-8    text-white bg-green-600  transition-all rounded-md text-[18px]`}>Trade signup</NavLink>
+        <NavLink to='/register-as/trades-people' className={`btn btn-sm border-green-600 hover:bg-green-800  px-8    text-white bg-green-600  transition-all rounded-md text-[18px]`}>Trade signup</NavLink>
        
         <NavLink to='/account/login' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'}     py-1 transition-all  rounded-md px-5`}>Login</NavLink>
 
@@ -63,7 +63,7 @@ const MainLayout = () => {
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content  flex flex-col">
                     {/* Navbar */}
-                    <div className="navbar shadow-md; rounded-md bg-[rgba(255,255,255,0.79)] text-gray-700">
+                    <div className="navbar shadow-md border-b rounded-md bg-[rgba(255,255,255,0.79)] text-gray-700">
                         <div className="max-w-7xl mx-auto w-full">
                             <div className="flex-none lg:hidden">
                                 <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn bg-transparent border-none">
@@ -92,7 +92,7 @@ const MainLayout = () => {
                         <NavLink to='/' className={`${location.pathname === '/sd' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>Ask a trade</NavLink>
 
                         <NavLink to='/' className={` button-1  transition-all rounded-md `}>Post a job</NavLink>
-                        <NavLink to='/' className={` button-2  transition-all rounded-md `}>Trade SignUp</NavLink>
+                        <NavLink to='/register-as/trades-people' className={` button-2  transition-all rounded-md `}>Trade SignUp</NavLink>
                         <NavLink to='/' className={`${location.pathname === '/s' ? 'buttonActive' : 'buttonHover'} py-1 transition-all  rounded-md px-5`}>Login</NavLink>
                     </ul>
                 </div>

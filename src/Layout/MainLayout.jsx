@@ -50,7 +50,7 @@ const MainLayout = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="navbar bg-white/30 backdrop-blur-sm shadow-lg sticky top-0 ">
+          <div className="navbar bg-white backdrop-blur-sm shadow-lg">
             <div className="container mx-auto flex items-center justify-between px-4">
               <div className="flex items-center">
                 <label htmlFor="my-drawer-3" className=" lg:hidden mr-5">
@@ -66,9 +66,9 @@ const MainLayout = () => {
             </div>
           </div>
           {/* Page Content */}
-          <div className="flex-grow">
+     
             <Outlet />
-          </div>
+        
           {/* Footer */}
           <Footer />
         </div>

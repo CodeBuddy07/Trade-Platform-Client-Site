@@ -6,6 +6,7 @@ import AccountCategory from "../Pages/Registration/AccountCategory";
 import Property_Owner from "../Pages/Registration/Property_Owner";
 import ResetPassword from "../Components/ResetPassword";
 import RegistrationTrade from "../Pages/Registration/RegistrationTrade";
+import HowItWorks from "../Pages/HowItWorks/HowItWorks";
 
 const Routes = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const Routes = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>
+            },
+            {
+                path: '/how-it-works',
+                element: <HowItWorks/>
             },
             {
                 path: 'account/login',

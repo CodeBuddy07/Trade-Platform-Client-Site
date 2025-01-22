@@ -1,6 +1,6 @@
 const JoinUsCTA = () => {
     return (
-      <div className="relative bg-gradient-to-b from-green-100 to-green-300 py-16 px-8">
+      <div className="relative bg-gradient-to-b from-green-100 via-green-300 to-gray-00 py-16 px-8">
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <h2 className="text-4xl font-bold text-gray-800">
             Ready to Take the Next Step?

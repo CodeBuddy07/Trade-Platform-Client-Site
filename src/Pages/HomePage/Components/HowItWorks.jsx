@@ -5,11 +5,16 @@ import image3 from "./../../../files/contact.jpg";
 const HowItWorks = () => {
   return (
     <div className="text-center text-gray-600 p-16 -mt-24 bg-gray-50  space-y-2 ">
-      <h1 className="md:text-4xl text-3xl">How it works</h1>
-      <p className="md:text-xl text-sm">
-        Easily find skilled professionals in your area with our fast and free
-        online service.
-      </p>
+      <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-green-800">
+          How it works
+          </h1>
+          <p className="max-w-3xl mx-auto text-base md:text-lg">
+          Easily find skilled professionals in your area with our fast and free
+          online service.
+          </p>
+          <hr className="w-16 mx-auto mt-2 border-2 border-green-600" />
+        </div>
       
         <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
           <div className="space-y-4">

@@ -6,6 +6,7 @@ import AccountCategory from "../Pages/Registration/AccountCategory";
 import Property_Owner from "../Pages/Registration/Property_Owner";
 import ResetPassword from "../Components/ResetPassword";
 import RegistrationTrade from "../Pages/Registration/RegistrationTrade";
+import Dashboard from "../Dashboard/Pages/Dashboard";
 
 const Routes = createBrowserRouter([
     {
@@ -23,8 +24,10 @@ const Routes = createBrowserRouter([
             {
                 path: 'register-as',
                 element: <AccountCategory></AccountCategory>,
-
-
+            },
+            {
+                path: 'admin/dashboard',
+                element:<Dashboard></Dashboard>
             },
             {
                 path: 'register-as/property-owner',

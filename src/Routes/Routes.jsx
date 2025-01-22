@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/HomePage/Home";
-import Login from "../Pages/HomePage/Login/Login";
+import Login from "../Pages/Login/Login";
 import AccountCategory from "../Pages/Registration/AccountCategory";
 import Property_Owner from "../Pages/Registration/Property_Owner";
 import ResetPassword from "../Components/ResetPassword";
@@ -18,7 +18,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'account/login',
-                element: <Login></Login>
+                element: <Login/>
             },
             {
                 path: 'register-as',

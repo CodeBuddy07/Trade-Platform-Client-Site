@@ -30,7 +30,7 @@ const Banner = () => {
           />
 
           {/* Button */}
-          <button className="bg-green-500 w-max text-white px-4 py-3 -my-[1px] -mr-[1px] rounded-lg hover:bg-orange-600">
+          <button className="bg-green-500 w-max text-white px-4 py-3 -my-[1px] -mr-[1px] rounded-lg hover:bg-green-600">
             Get Started
           </button>
         </div>

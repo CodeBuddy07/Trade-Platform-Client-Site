@@ -1,399 +1,274 @@
 import { useState } from "react";
 import { FaCamera } from "react-icons/fa";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-
 const RegistrationTrade = () => {
-    const [imageSelection, setImageSelection] = useState(false)
-    const [showCompanyInput, setShowCompanyInput] = useState(false)
-    console.log(showCompanyInput);
+  const [imagePreview, setImagePreview] = useState("");
+  const [showCompanyInput, setShowCompanyInput] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [certificationPreview, setCertificationPreview] = useState("");
 
-    const handleImageUpload = (event) => {
-        const file = event.target.files[0];
-        console.log(file);
-        const imagePreview = document.getElementById('fileShowField');
-
-        if (file) {
-            // Preview the selected image
-            const fileReader = new FileReader();
-            fileReader.onload = function (e) {
-                imagePreview.src = e.target.result; // Display the image preview
-            };
-            fileReader.readAsDataURL(file); // Read the file to generate a data URL
-
-            // Send the file via XMLHttpRequest (simulation)
-            uploadFile(file);
-
-        }
-
-        // Function to simulate file upload with XMLHttpRequest
-        function uploadFile(file) {
-            setImageSelection(true)
-            const xhr = new XMLHttpRequest();
-            const formData = new FormData();
-
-            // Prepare the request
-            xhr.open('POST', '/upload', true); // Replace '/upload' with your actual server endpoint
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    console.log('File uploaded successfully');
-                    // You can handle the server response here, e.g., show success message
-                } else {
-                    console.error('Error uploading the file');
-                }
-            };
-
-            // Append the file to FormData
-            formData.append('image', file);
-            console.log(formData);
-
-            // Send the request with the file
-            xhr.send(formData);
-        }
-
-
-
-
-        console.log(imagePreview);
-
-    };
-
-    const handleCompany = (e) => {
-        setShowCompanyInput(!showCompanyInput)
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => setImagePreview(reader.result);
+      reader.readAsDataURL(file);
     }
+  };
 
+  const handleCertificationUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => setCertificationPreview(reader.result);
+      reader.readAsDataURL(file);
+    }
+  };
 
+  const toggleCompanyInput = () => setShowCompanyInput(!showCompanyInput);
 
-    return (
-        <div>
-            <div className="flex my-20 items-center rounded-md justify-center min-h-screen ">
-                <form className="w-full max-w-5xl  space-y-10 bg-gradient-to-t   from-gray-300 to-gray-200 shadow-lg rounded-md">
-
-
-                    <div className="h-[200px] py-4 relative rounded-tr-md rounded-tl-md bg-gradient-to-b from-green-800 to-green-400">
-                        <h1 className="md:text-3xl text-2xl text-white font-bold text-center ">
-                            Create a Trade Account
-                        </h1>
-                        <div className="absolute w-full   justify-center items-center md:-bottom-5 -bottom-10">
-
-
-                            <div className="flex items-center  justify-center">
-                                <div className="relative group">
-                                    {/* Image display */}
-
-                                    <div>
-                                        <img
-                                            src=''
-                                            id="fileShowField"
-                                            className="w-36 h-36 border-4 border-white bg-gray-300 rounded-full object-cover"
-                                        />
-                                        {
-                                            !imageSelection && <p className="absolute text-center bottom-[50%] translate-y-[50%] left-[50%] -translate-x-[50%]">Upload Photo</p>
-                                        }
-                                    </div>
-
-                                    {/* Overlay and Camera Icon */}
-                                    <div className="absolute inset-0   flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded-full">
-                                        <label
-                                            htmlFor="imageInput"
-                                            className="flex items-center justify-center cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
-                                        >
-                                            <FaCamera className="text-white text-2xl" />
-                                        </label>
-                                    </div>
-
-                                    {/* Hidden file input */}
-                                    <input
-                                        type="file"
-                                        id="imageInput"
-                                        accept="image/*"
-                                        onChange={handleImageUpload}
-                                        className="hidden"
-                                    />
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-                    <div className="p-10 space-y-10">
-
-
-                        {/* Name */}
-                        <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                            <div className="flex-1 w-full">
-                                <label className="block mb-2 text-sm font-medium text-gray-700">
-                                    First Name <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="First"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div className="flex-1 w-full">
-                                <label className="block mb-2 text-sm font-medium text-gray-700">
-                                    Last Name <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Last"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                        </div>
-
-                        {/* email, phone */}
-                        <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                            <div className="flex-1 w-full">
-                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Email <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Your email"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div className="flex-1 w-full">
-                                <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Phone Number <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="+44 ### ### ####"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-                        {/* Select options */}
-                        <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                            <div className="flex-1 w-full w-full">
-                                <label className="block mb-2 text-sm font-medium text-gray-700">
-                                    Trade/Profession
-                                    <span className="text-red-500">*</span>
-                                </label>
-                                <select className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500">
-                                    <option value="">Select trade</option>
-                                    <option value="Electrician">Electrician</option>
-                                    <option value="Plumber">Plumber</option>
-                                    <option value="Heating Engineer">Heating Engineer</option>
-                                    <option value="Plasterer">Plasterer</option>
-                                    <option value="Joiner">Joiner</option>
-                                </select>
-                            </div>
-                            <div className="flex-1 w-full">
-                                <label htmlFor="certificateName" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Certifications/Licenses <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    id="certificateName"
-                                    name="certificateName"
-                                    placeholder="Certificate name/License number"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                        </div>
-                        {/* experience */}
-
-                        <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                            <div className="flex-1 w-full">
-                                <label htmlFor="experience" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Years of Experience <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    name="experience"
-                                    id="experience"
-                                    placeholder="Years of experience"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div className="flex-1 w-full">
-
-                            </div>
-                        </div>
-
-
-                        {/* Gender */}
-                        {/* <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-700">
-                                Gender <span className="text-red-500">*</span>
-                            </label>
-                            <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                                <label className="flex items-center space-x-2">
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="male"
-                                        className="w-4 h-4 text-indigo-500 border-gray-300 focus:ring-indigo-500"
-                                    />
-                                    <span>Male</span>
-                                </label>
-                                <label className="flex items-center space-x-2">
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="female"
-                                        className="w-4 h-4 text-indigo-500 border-gray-300 focus:ring-indigo-500"
-                                    />
-                                    <span>Female</span>
-                                </label>
-                                <label className="flex items-center space-x-2">
-                                    <input
-                                        type="radio"
-                                        name="gender"
-                                        value="other"
-                                        className="w-4 h-4 text-indigo-500 border-gray-300 focus:ring-indigo-500"
-                                    />
-                                    <span>Other</span>
-                                </label>
-                            </div>
-                        </div> */}
-
-
-                        <div className="bg-gray-50 p-4 rounded-md space-y-6">
-                            <div className="flex items-center  gap-10">
-
-                                <div className="flex items-center gap-4">
-                                    <input type="checkbox"
-                                        onClick={(e) => handleCompany(e.target.value)}
-                                        className="checkbox bg-white" /><p>Company-based</p>
-                                </div>
-                            </div>
-                            {/* company based */}
-                            <div className={`${showCompanyInput ? 'block' : 'hidden'} space-y-6`}>
-                                <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4 ">
-                                    <div className="flex-1 w-full">
-                                        <label htmlFor="companyName" className="block mb-2 text-sm font-medium text-gray-700">
-                                            Company Name <span className="text-red-500">*</span>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="companyName"
-                                            id="companyName"
-                                            placeholder="Company Name"
-                                            className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                        />
-                                    </div>
-                                    <div className="flex-1 w-full">
-                                        <label htmlFor="Insurance Information" className="block mb-2 text-sm font-medium text-gray-700">
-                                            Proof of Insurance (Upload photo) <span className="text-xs">(.jpg,.jpeg,.png)</span> <span className="text-red-500">*</span>
-                                        </label>
-                                        <label className="form-control w-full ">
-
-                                            <input type="file" accept=".jpg,.jpeg,.png" className="file-input file-input-bordered w-full " />
-
-                                        </label>
-                                    </div>
-                                </div>
-                                {/*employer */}
-                                <div>
-                                    <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                                        <div className="flex-1 w-full">
-                                            <label htmlFor="employer" className="block mb-2 text-sm font-medium text-gray-700">
-                                                Employers <span className="text-red-500">*</span>
-                                            </label>
-                                            <input
-                                                type="number"
-                                                name="employer"
-                                                id="employer"
-                                                placeholder="employers Count"
-                                                className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                            />
-                                        </div>
-                                        <div className="flex-1 w-full">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-                        {/* password */}
-
-                        <div className="flex w-full items-center flex-col md:flex-row md:space-y-0 space-y-6 md:space-x-4">
-                            <div className="flex-1 w-full">
-                                <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Set password <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    placeholder="Password"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                            <div className="flex-1 w-full">
-                                <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-gray-700">
-                                    Confirm password <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    id="confirm-password"
-                                    name="confirm-password"
-                                    placeholder="Confirm password"
-                                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex  items-start gap-2">
-                            <input type="checkbox" required className="checkbox bg-white "  />
-                            <p>I agree to the <span className="text-pink-600">Terms of Use</span> and <span className="text-pink-600">Privacy Policy.</span></p>
-                        </div>
-
-                        {/* Submit Button */}
-                        <div className="flex justify-center items-center">
-                            <button
-                                type="submit"
-                                className=" px-14 border-none py-2 text-white text-xl rounded  focus:outline-none focus:ring-1
-                                hover:shadow-pink-600 bg-gradient-to-b btn from-pink-400 to-pink-900
-                                "
-                            >
-                                Submit Form
-                            </button>
-                        </div>
-                        <div>
-                            <p className="text-center"><span className="italic">Already have account?</span> <Link
-                                to={'/account/login'}
-                                className="text-pink-600 hover:underline underline-offset-4">Login now</Link></p>
-                        </div>
-                    </div>
-
-
-                </form>
-            </div>
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <form className="w-full lg:my-10 max-w-4xl bg-white shadow-lg rounded-lg p-8 space-y-8">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-800">
+            Create a Trade Account
+          </h1>
+          <p className="text-gray-600">Join and showcase your trade skills.</p>
         </div>
-    );
+
+        {/* Image Upload */}
+        <div className="flex justify-center items-center relative">
+          <div className="relative group w-36 h-36">
+            <img
+              src={imagePreview || "https://picsum.photos/200"}
+              alt="Profile"
+              className="w-36 h-36 rounded-full object-cover border-4 border-gray-300"
+            />
+            <label
+              htmlFor="imageInput"
+              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded-full cursor-pointer"
+            >
+              <FaCamera className="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            </label>
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              onChange={handleImageUpload}
+              className="hidden"
+            />
+          </div>
+        </div>
+
+        {/* Personal Information */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              First Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="First Name"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Last Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone Number <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Phone Number"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Password Section */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="relative">
+            <label className="block text-sm font-medium text-gray-700">
+              Password <span className="text-red-500">*</span>
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-3 top-5 flex items-center cursor-pointer"
+            >
+              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+            </div>
+          </div>
+          <div className="relative">
+            <label className="block text-sm font-medium text-gray-700">
+              Confirm Password <span className="text-red-500">*</span>
+            </label>
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm Password"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute inset-y-0 right-3 top-5 flex items-center cursor-pointer"
+            >
+              {showConfirmPassword ? (
+                <AiOutlineEyeInvisible />
+              ) : (
+                <AiOutlineEye />
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Trade Information */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Trade/Profession <span className="text-red-500">*</span>
+            </label>
+            <select className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="">Select Trade</option>
+              <option value="Electrician">Electrician</option>
+              <option value="Plumber">Plumber</option>
+              <option value="Heating Engineer">Heating Engineer</option>
+              <option value="Plasterer">Plasterer</option>
+              <option value="Joiner">Joiner</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Years of Experience <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="number"
+              placeholder="Years of Experience"
+              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Certifications/Licenses (Upload){" "}
+            <span className="text-red-500">*</span>
+          </label>
+          <div className="flex items-center space-x-4">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleCertificationUpload}
+              className="w-full px-4 py-2 border rounded"
+            />
+            {certificationPreview && (
+              <img
+                src={certificationPreview}
+                alt="Certification Preview"
+                className="w-16 h-16 object-cover rounded"
+              />
+            )}
+          </div>
+        </div>
+
+        {/* Company Information */}
+        <div>
+          <label className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              onChange={toggleCompanyInput}
+              className="checkbox checkbox-sm checkbox-success [--chkfg:white] rounded border-gray-300 focus:ring-green-500"
+            />
+            <span className="text-sm font-medium text-gray-700">
+              Register as a company
+            </span>
+          </label>
+          {showCompanyInput && (
+            <div className="grid md:grid-cols-2 gap-6 mt-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Company Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Proof of Insurance (Upload)
+                </label>
+                <input
+                  type="file"
+                  accept=".jpg,.jpeg,.png"
+                  className="w-full px-4 py-2 border rounded"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="flex w-full justify-end items-start gap-2">
+          <input type="checkbox" required className="checkbox checkbox-sm checkbox-success [--chkfg:white] text-white " />
+          <p className="text-sm font-medium text-gray-700">
+            I agree to the <span className="text-blue-600">Terms of Use</span>{" "}
+            and <span className="text-blue-600">Privacy Policy.</span>
+          </p>
+        </div>
+
+<div className="flex justify-center">
+<button
+          type="submit"
+          className="w-max px-10 py-3 bg-green-500 text-white font-bold rounded hover:bg-green-600"
+        >
+          Register
+        </button>
+</div>
+
+        <div>
+          <p className="text-center">
+            <span className="italic">Already have account?</span>{" "}
+            <Link
+              to={"/account/login"}
+              className="text-green-600 hover:underline underline-offset-4 underline"
+            >
+              Login now
+            </Link>
+          </p>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default RegistrationTrade;

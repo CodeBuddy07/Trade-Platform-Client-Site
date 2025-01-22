@@ -7,14 +7,17 @@ const WhyChooseUs = () => {
   return (
     <div className="bg-gray-100 text-gray-800 py-16 px-6 md:px-20 ">
       <div className="text-center space-y-4">
-        <h1 className="text-3xl md:text-4xl font-extrabold">
-          Why MyBuilder is Your Trusted Choice
-        </h1>
-        <p className="max-w-3xl mx-auto text-base md:text-lg">
-          Finding the right tradesperson for your project can be challenging.
-          MyBuilder makes it simple and reliable to connect with trusted
-          professionals.
-        </p>
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-green-800">
+            Why MyBuilder is Your Trusted Choice
+          </h1>
+          <p className="max-w-3xl mx-auto text-base md:text-lg">
+            Finding the right tradesperson for your project can be challenging.
+            MyBuilder makes it simple and reliable to connect with trusted
+            professionals.
+          </p>
+          <hr className="w-16 mx-auto mt-2 border-2 border-green-600" />
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row items-center gap-10 justify-center mt-12 max-w-7xl mx-auto">
@@ -77,7 +80,7 @@ const WhyChooseUs = () => {
           </div>
 
           <button className="bg-green-600 px-7 text-white py-2 mt-4 rounded-md hover:bg-green-700 transition">
-            Post a Job 
+            Post a Job
           </button>
         </div>
       </div>

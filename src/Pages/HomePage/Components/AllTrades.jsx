@@ -52,7 +52,7 @@ const AllTrades = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-5 py-20 text-gray-700 md:px-10 lg:px-20 bg-gray-100">
+    <div className="flex flex-col items-center justify-center p-5 py-20 text-gray-700 md:px-10 lg:px-20 bg-white">
       {/* Section Header */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-green-800">All Trades</h1>

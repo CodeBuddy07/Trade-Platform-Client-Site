@@ -19,10 +19,10 @@ const MainLayout = () => {
           key={path}
           to={path}
           className={({ isActive }) =>
-            `relative py-2 px-4 font-medium text-gray-700 transition-all
-                        ${isActive ? "text-pink-600" : "hover:text-pink-600"}
+            `relative py-2 px-4 text-nowrap font-medium text-gray-700 transition-all
+                        ${isActive ? "text-green-600 bg-gray-100 rounded-md after:w-full" : "hover:text-green-600 hover:bg-gray-100 rounded-md"}
                         after:content-[''] after:absolute after:bottom-0 after:left-0 
-                        after:w-0 after:h-0.5 after:bg-pink-600
+                        after:w-0 after:h-0.5 after:bg-green-600
                         hover:after:w-full hover:after:transition-all hover:after:duration-500`
           }
         >
@@ -37,7 +37,7 @@ const MainLayout = () => {
       </NavLink>
       <NavLink
         to="/register-as/trades-people"
-        className="btn border border-green-600 text-green-600 px-6 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
+        className="btn border border-green-600 text-green-600 px-5 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
       >
         Trade signup
       </NavLink>
@@ -59,7 +59,7 @@ const MainLayout = () => {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="w-36 h-auto lg:block hidden"
+                  className="w-36 h-auto lg:block hidden mr-5"
                 />
               </div>
               <div className="hidden lg:block">{navContent}</div>
@@ -83,14 +83,14 @@ const MainLayout = () => {
                 key={path}
                 to={path}
                 className={({ isActive }) =>
-                  `relative py-2 px-4 border-b font-medium transition-all 
+                  `relative py-2  px-4 border-b font-medium transition-all 
                                     ${
                                       isActive
-                                        ? "text-pink-600"
-                                        : "hover:text-pink-600"
+                                        ? "text-green-600"
+                                        : "hover:text-green-600"
                                     } 
                                     after:content-[''] after:absolute after:bottom-0 after:left-0 
-                                    after:w-0 after:h-0.5 after:bg-pink-600 
+                                    after:w-0 after:h-0.5 after:bg-green-600 
                                     hover:after:w-full hover:after:transition-all hover:after:duration-500`
                 }
               >

@@ -1,21 +1,18 @@
-import JoinAsTrades from "../../Components/JoinAsTrades";
-import PostJobMessage from "../../Components/PostJobMessage";
-import AllTrades from "./AllTrades";
-import Banner from "./Banner";
-import HowItWorks from "./HowItWorks";
-import Testimonials from "./Testimonials";
-import WhyChooseUs from "./WhyChooseUs";
+import Banner from "./Components/Banner";
+import HowItWorks from "./Components/HowItWorks";
+import WhyChooseUs from "./Components/WhyChooseUs";
+import AllTrades from "./Components/AllTrades";
+
 
 
 const Home = () => {
     return (
         <div className=" min-h-screen">
-             <Banner></Banner>
-            {/*<HowItWorks></HowItWorks>
-            <WhyChooseUs></WhyChooseUs>
-            <PostJobMessage></PostJobMessage>
-            <AllTrades></AllTrades>
-            <JoinAsTrades></JoinAsTrades>
+            <Banner/>
+            <HowItWorks/>
+            <WhyChooseUs/>
+            <AllTrades/>
+            {/*<JoinAsTrades></JoinAsTrades>
             <Testimonials></Testimonials>    */}
         </div>
     );

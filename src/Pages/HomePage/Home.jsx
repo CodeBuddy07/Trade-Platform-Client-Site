@@ -2,6 +2,8 @@ import Banner from "./Components/Banner";
 import HowItWorks from "./Components/HowItWorks";
 import WhyChooseUs from "./Components/WhyChooseUs";
 import AllTrades from "./Components/AllTrades";
+import JoinAsTrades from "./Components/JoinAsTrades";
+import Testimonials from "./Components/Testimonials";
 
 
 
@@ -12,8 +14,8 @@ const Home = () => {
             <HowItWorks/>
             <WhyChooseUs/>
             <AllTrades/>
-            {/*<JoinAsTrades></JoinAsTrades>
-            <Testimonials></Testimonials>    */}
+            <JoinAsTrades/>
+            <Testimonials/>   
         </div>
     );
 };

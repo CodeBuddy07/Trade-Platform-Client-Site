@@ -1,187 +1,102 @@
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
+import Slider from "react-slick";
+import { FaQuoteLeft } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+const testimonials = [
+  {
+    name: "John Doe",
+    title: "Web Developer",
+    testimonial:
+      "This platform has truly transformed the way I work. The opportunities are endless!",
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
+  },
+  {
+    name: "Jane Smith",
+    title: "Graphic Designer",
+    testimonial:
+      "I’ve found amazing clients here and grown my business exponentially!",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
+  },
+  {
+    name: "Tom Hardy",
+    title: "Photographer",
+    testimonial:
+      "The leads I receive are perfect for my niche. Highly recommended!",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+  },
+  {
+    name: "Emma Watson",
+    title: "Interior Designer",
+    testimonial:
+      "A fantastic platform that bridges the gap between professionals and clients.",
+    image: "https://randomuser.me/api/portraits/women/9.jpg",
+  },
+];
 
-import slide_image_1 from './../../files/assets/images/img_1.jpg';
-import bgImg from './../../files/reviews.jpg';
-import { FaStar } from "react-icons/fa";
+const Testimonials = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
-
-
-const ReviewCard = ({ imgSrc, name, review, rating }) => {
   return (
-    <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden border">
-      {/* Image Section */}
-      <div className="w-full h-48">
-        <img
-          src={imgSrc}
-          alt={name}
-          className="w-full h-full object-cover"
-        />
+    <div className="relative bg-gray-100 py-20 px-5">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold">What Our Clients Say</h2>
+        <hr className="w-20 border-2 border-green-500 mx-auto mt-2" />
       </div>
 
-      {/* Content Section */}
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
-        <p className="mt-2 text-gray-600 text-sm">{review}</p>
+      {/* Blur Effects */}
+      <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-gray-100 to-transparent z-10"></div>
+      <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-gray-100 to-transparent z-10"></div>
 
-        {/* Rating Section */}
-        <div className="flex items-center mt-3">
-          {Array.from({ length: 5 }, (_, index) => (
-            <FaStar
-              key={index}
-              className={`w-5 h-5 ${index < rating ? "text-yellow-500" : "text-gray-300"
-                }`}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Slider */}
+      <Slider {...settings} className="max-w-7xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="p-5 transition-transform transform hover:scale-105"
+          >
+            <div className="bg-white shadow-lg rounded-lg p-6 space-y-4">
+              <FaQuoteLeft className="text-green-500 text-3xl" />
+              <p className="text-gray-600">{testimonial.testimonial}</p>
+              <div className="flex items-center space-x-4 mt-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="text-xl font-semibold">{testimonial.name}</h4>
+                  <p className="text-gray-500">{testimonial.title}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
-
-
-const Testimonials = () => {
-
-
-  const [sliderRef] = useKeenSlider({
-    mode: "free-snap",
-    slides: {
-      origin: "center",
-      perView: 3, // Default for desktop
-      spacing: 15, // Default spacing
-    },
-    breakpoints: {
-      // Mobile view
-      "(max-width: 640px)": {
-        slides: {
-          perView: 1, // Show 1 slide on mobile
-          spacing: 10, // Reduced spacing for mobile
-        },
-      },
-      // Tablet view
-      "(min-width: 641px) and (max-width: 1024px)": {
-        slides: {
-          perView: 2, // Show 2 slides on tablet
-          spacing: 12, // Slightly reduced spacing for tablets
-        },
-      },
-      // Desktop view (default)
-      "(min-width: 1025px)": {
-        slides: {
-          perView: 3, // Show 3 slides on desktop
-          spacing: 15, // Default spacing for desktop
-        },
-      },
-    },
-  });
-
-
-  return (
-    <div className=''>
-      <div className=" lg:px-20 py-20 md:p-10 p-2 relative ]">
-
-        <h1 className='text-5xl text-center text-white font-bold'>Testimonials</h1>
-
-
-        <div className="relative py-20 lg">
-          <div className="lg:w-[600px] md:w-[400px] w-full lg:h-[700px] md:h-[500px]">
-            <img className="w-full h-full object-cover rounded-md" src={bgImg} alt="" />
-          </div>
-          <div className="absolute  top-1/2 w-3/4 left-[60%] transform -translate-x-1/2 -translate-y-1/2   p-4 rounded">
-            <div ref={sliderRef} className="keen-slider rounded-md ">
-
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-              <div className="keen-slider__slide number-slide1 rounded-md">
-                <ReviewCard
-                  imgSrc={slide_image_1}
-                  name="John Doe"
-                  review="Great service! Highly recommended."
-                  rating={4}
-                />
-              </div>
-
-
-
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default Testimonials;

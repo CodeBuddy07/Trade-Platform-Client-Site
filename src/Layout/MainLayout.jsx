@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import logo from "./../files/logo.png";
 import { IoMenuSharp } from "react-icons/io5";
@@ -56,19 +56,20 @@ const MainLayout = () => {
                 <label htmlFor="my-drawer-3" className=" lg:hidden mr-5">
                   <IoMenuSharp size={25} />
                 </label>
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-36 h-auto lg:block hidden mr-5"
-                />
+                <Link to='/admin/dashboard'>
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-36 h-auto lg:block hidden mr-5"
+                  /></Link>
               </div>
               <div className="hidden lg:block">{navContent}</div>
             </div>
           </div>
           {/* Page Content */}
-     
-            <Outlet />
-        
+
+          <Outlet />
+
           {/* Footer */}
           <Footer />
         </div>
@@ -84,11 +85,10 @@ const MainLayout = () => {
                 to={path}
                 className={({ isActive }) =>
                   `relative py-2  px-4 border-b font-medium transition-all 
-                                    ${
-                                      isActive
-                                        ? "text-green-600"
-                                        : "hover:text-green-600"
-                                    } 
+                                    ${isActive
+                    ? "text-green-600"
+                    : "hover:text-green-600"
+                  } 
                                     after:content-[''] after:absolute after:bottom-0 after:left-0 
                                     after:w-0 after:h-0.5 after:bg-green-600 
                                     hover:after:w-full hover:after:transition-all hover:after:duration-500`

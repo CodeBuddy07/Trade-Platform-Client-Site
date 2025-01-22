@@ -83,7 +83,7 @@ const AllTrades = () => {
                     <p className="font-semibold">{trade.count}</p>
                     <p>{trade.location}</p>
                   </div>
-                  <button className="px-8 py-2 text-lg text-white transition-shadow bg-gradient-to-r from-green-500 to-green-700 rounded-md shadow-md hover:shadow-lg">
+                  <button className="px-8 text-nowrap py-2 text-lg text-white transition-shadow bg-gradient-to-r from-green-500 to-green-700 rounded-md shadow-md hover:shadow-lg">
                     Hire Now
                   </button>
                 </div>

@@ -11,7 +11,7 @@ const Dashboard = () => {
             notun code added
 
 
-
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum blanditiis architecto magnam.
 
             new code added by chamon
 

@@ -9,14 +9,15 @@ import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
     return (
-        <div className="space-y-32">
-            <Banner></Banner>
+        <div className="space-y-32 min-h-screen">
+            {/* <Banner></Banner>
             <HowItWorks></HowItWorks>
             <WhyChooseUs></WhyChooseUs>
             <PostJobMessage></PostJobMessage>
             <AllTrades></AllTrades>
             <JoinAsTrades></JoinAsTrades>
-            <Testimonials></Testimonials>   
+            <Testimonials></Testimonials>    */}
+            This is Home
         </div>
     );
 };

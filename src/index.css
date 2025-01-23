@@ -17,4 +17,24 @@ body {
   padding: 0;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-bounce.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-bounce.delay-400 {
+  animation-delay: 0.4s;
+}
 

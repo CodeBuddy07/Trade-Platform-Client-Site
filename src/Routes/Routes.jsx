@@ -3,12 +3,12 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/HomePage/Home";
 import Login from "../Pages/Login/Login";
 import AccountCategory from "../Pages/Registration/AccountCategory";
-import Property_Owner from "../Pages/Registration/Property_Owner";
 import ResetPassword from "../Components/ResetPassword";
 import RegistrationTrade from "../Pages/Registration/RegistrationTrade";
 import Dashboard from "../Dashboard/Pages/Dashboard";
 import HowItWorks from "../Pages/HowItWorks/HowItWorks";
 import AskATrade from "../Pages/AskATrade/AskATrade";
+import ServiceSeeker from "../Pages/Registration/ServiceSeeker";
 
 const Routes = createBrowserRouter([
     {
@@ -28,10 +28,6 @@ const Routes = createBrowserRouter([
                 element: <AskATrade/>
             },
             {
-                path: 'account/login',
-                element: <Login/>
-            },
-            {
                 path: 'register-as',
                 element: <AccountCategory></AccountCategory>,
             },
@@ -40,8 +36,8 @@ const Routes = createBrowserRouter([
                 element:<Dashboard></Dashboard>
             },
             {
-                path: 'register-as/property-owner',
-                element: <Property_Owner></Property_Owner>
+                path: 'register-as/service-seeker',
+                element: <ServiceSeeker/>
 
             },
             {
@@ -55,7 +51,11 @@ const Routes = createBrowserRouter([
 
             },
         ]
-    }
+    },
+    {
+        path: 'account/login',
+        element: <Login/>
+    },
 ])
 
 export default Routes;

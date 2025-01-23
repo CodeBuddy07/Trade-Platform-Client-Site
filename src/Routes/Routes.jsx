@@ -8,6 +8,7 @@ import ResetPassword from "../Components/ResetPassword";
 import RegistrationTrade from "../Pages/Registration/RegistrationTrade";
 import Dashboard from "../Dashboard/Pages/Dashboard";
 import HowItWorks from "../Pages/HowItWorks/HowItWorks";
+import AskATrade from "../Pages/AskATrade/AskATrade";
 
 const Routes = createBrowserRouter([
     {
@@ -19,8 +20,12 @@ const Routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/how-it-works',
+                path: 'how-it-works',
                 element: <HowItWorks/>
+            },
+            {
+                path: 'ask-a-trade',
+                element: <AskATrade/>
             },
             {
                 path: 'account/login',

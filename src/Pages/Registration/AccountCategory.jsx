@@ -1,46 +1,60 @@
 import { Link, NavLink } from 'react-router-dom';
-import man from './../../files/posting.png'
-import trades from './../../files/trades.png'
+import man from './../../files/posting.png';
+import trades from './../../files/trades.png';
 
 const AccountCategory = () => {
     return (
-        <div className="min-h-screen  md:p-10 text-gray-700 bg-gray-100 flex items-center justify-center">
-            <div className="flex md:mx-20 mx-10 w-full   flex-col lg:flex-row justify-center gap-10 items-center">
-                <NavLink to={'property-owner'} className={`hover:shadow-xl`}>
-                    <div className="card p-4 flex flex-col md:flex-row card-side bg-base-100 shadow-xl">
-                        <figure>
+        <div className="min-h-screen md:p-10 text-gray-700 bg-gray-50 flex items-center justify-center">
+            <div className="flex md:mx-20 mx-10 w-full flex-col lg:flex-row justify-center gap-10 items-center">
+                {/* Service Seekers Card */}
+                <NavLink to={'service-seeker'} className="hover:shadow-2xl transition-shadow duration-300 w-full">
+                    <div className="card p-6 flex flex-col md:flex-row card-side bg-white shadow-lg rounded-lg">
+                        <div className='w-80'>
                             <img
-                                className='w-[200px] h-[200px]  border-r'
+                                className="w-full border-r border-gray-200"
                                 src={man}
-                                alt="Movie" />
-                        </figure>
-                        <div className="md:pl-10 space-y-2 flex justify-center items-start flex-col">
-                            <h2 className="text-3xl font-semibold">Property Owners</h2>
-                            <p className='text-xl'>Create an account to manage your job postings and Profile</p>
-                            <div className='flex justify-center md:justify-start  w-full'>
-                                <button className='hover:shadow-md hover:shadow-pink-600 mt-10 btn border-none text-white hover:underline text-xl  px-10 bg-gradient-to-b rounded-md from-pink-400 to-pink-900'>I'm a home owner</button>
-
+                                alt="Service Seeker"
+                            />
+                        </div>
+                        <div className="md:pl-10 space-y-4 flex justify-center items-start flex-col">
+                            <h2 className="text-3xl font-semibold text-blue-700">
+                                Service Seekers
+                            </h2>
+                            <p className="text-lg text-gray-600">
+                                Need skilled professionals for your projects? Sign up to post jobs and hire trusted tradespeople today.
+                            </p>
+                            <div className="flex justify-center md:justify-start w-full">
+                                <button className="hover:shadow-md hover:shadow-blue-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 border-none transition-transform hover:scale-105">
+                                    I'm Looking for Services
+                                </button>
                             </div>
                         </div>
                     </div>
                 </NavLink>
-                <NavLink to={'trade'} className={`hover:shadow-xl`}>
-                    <div className="card p-4 flex flex-col md:flex-row card-side bg-base-100 shadow-xl">
-                        <figure>
+
+                {/* Tradespeople Card */}
+                <NavLink to={'trade'} className="hover:shadow-2xl transition-shadow duration-300 w-full">
+                    <div className="card p-6 flex flex-col md:flex-row card-side bg-white shadow-lg rounded-lg">
+                        <div className='w-80'>
                             <img
-                                className='w-[200px] h-[200px] border-r'
+                                className="w-full  border-r border-gray-200"
                                 src={trades}
-                                alt="Movie" />
-                        </figure>
-                        <div className="md:pl-10 space-y-2 flex justify-center items-start flex-col">
-                            <h2 className="text-3xl font-semibold">Tradespeople</h2>
-                            <p className='text-xl'>Unlock 1,000+ job opportunities daily and strengthen your customer network.</p>
-                            <div className='flex justify-center md:justify-start  w-full'>
-
+                                alt="Tradespeople"
+                            />
+                        </div>
+                        <div className="md:pl-10 space-y-4 flex justify-center items-start flex-col">
+                            <h2 className="text-3xl font-semibold text-green-700">
+                                Tradespeople
+                            </h2>
+                            <p className="text-lg text-gray-600">
+                                Looking for work opportunities? Register as a tradesperson and gain access to hundreds of job postings daily to grow your business.
+                            </p>
+                            <div className="flex justify-center md:justify-start w-full">
                                 <Link to={'/register-as/trades-people'}>
-                                    <button className='hover:shadow-md hover:shadow-green-600 mt-10 btn border-none text-white hover:underline text-xl  px-10 bg-gradient-to-b rounded-md from-green-400 to-green-900'>I'm a trade</button>
+                                    <button className="hover:shadow-md hover:shadow-green-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-gradient-to-r from-green-500 to-green-700 border-none transition-transform hover:scale-105">
+                                        Register as Tradesperson
+                                    </button>
                                 </Link>
-
                             </div>
                         </div>
                     </div>

@@ -2,68 +2,89 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
-        <div className="p-6 text-gray-600  min-h-screen flex justify-center items-center">
-            <form className="w-full shadow-xl bg-white border-2 rounded-md border-gray-300 p-10 max-w-lg space-y-6">
-                <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email <span className="text-red-500">*</span>
-                    </label>
-                    <div className="flex flex-col">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+            <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
+                <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+                    Welcome Back
+                </h2>
+                <form className="space-y-5">
+                    {/* Email Field */}
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-gray-600 mb-1"
+                        >
+                            Email Address
+                        </label>
                         <input
                             type="email"
                             id="email"
-                            placeholder="Email"
-                            className="px-4 py-3  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-gray-500 bg-gradient-to-b from-gray-200 to-gray-50  "
+                            placeholder="Enter your email"
+                            className="w-full px-4 py-3 text-gray-800 bg-gray-100 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:border-green-400 outline-none"
+                            required
                         />
-
                     </div>
-                </div>
-                {/* Name Field */}
-                <div>
-                    <label htmlFor="password" className="block  font-medium text-gray-700 mb-1">
-                        Password <span className="text-red-500">*</span>
-                    </label>
-                    <div className="flex space-x-4">
-                        {/* First Name */}
-                        <div className="flex flex-col w-full">
+
+                    {/* Password Field */}
+                    <div>
+                        <label
+                            htmlFor="password"
+                            className="block text-sm font-medium text-gray-600 mb-1"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            className="w-full px-4 py-3 text-gray-800 bg-gray-100 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:border-green-400 outline-none"
+                            required
+                        />
+                    </div>
+
+                    {/* Remember Me and Forgot Password */}
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center">
                             <input
-                                type="email"
-                                id="email"
-                                placeholder="Email"
-                                className="px-4 py-3  rounded-full border border-gray-300 shadow-sm focus:outline-none focus:border-gray-500 bg-gradient-to-b from-gray-200 to-gray-50  "
+                                type="checkbox"
+                                id="remember"
+                                className="w-4 h-4 text-green-500 border-gray-300 rounded focus:ring-2 focus:ring-green-400"
                             />
-
+                            <label
+                                htmlFor="remember"
+                                className="ml-2 text-sm text-gray-600"
+                            >
+                                Remember me
+                            </label>
                         </div>
+                        <Link
+                            to="/account/password-reset"
+                            className="text-sm text-blue-500 hover:underline"
+                        >
+                            Forgot password?
+                        </Link>
                     </div>
-                    <div className="flex mt-4 items-center justify-between ">
-                        <div className="flex items-center gap-4">
-                            <input type="checkbox" className="checkbox checkbox-sm" /><p>Remember me</p>
-                        </div>
-                        <div className="">
-                            <Link to={'/account/password-reset'}><p className="hover:underline underline-offset-4">Forgot password</p></Link>
-                        </div>
-                    </div>
-                </div>
 
-                {/* Email Field */}
-                <div className="">
-                    <button className=" w-full text-xl btn rounded-full text-white bg-gradient-to-b  from-blue-700 to-blue-400 border-none shadow-sm shadow-blue-500 hover:shadow-blue-600 hover:shadow-md ">
-                        login
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className="w-full py-3 text-white bg-green-500 hover:bg-green-600 rounded-lg shadow-md transition-all duration-200"
+                    >
+                        Login
                     </button>
-                    <p className="text-center">Or</p>
-                    <button className="w-full text-xl btn bg-white hover:bg-white rounded-full text-blue-600 border-blue-400   hover:shadow-blue-600 hover:shadow-sm ">
-                        Login by email link
-                    </button>
+                </form>
 
-                </div>
-
-                <div>
-                    <p className="text-center"><span className="italic">Haven’t joined yet?</span> <Link
-                        to={'/register-as'}
-                        className="text-pink-600 hover:underline underline-offset-4">Create an account now!</Link></p>
-                </div>
-
-            </form>
+                {/* Register Link */}
+                <p className="mt-6 text-center text-sm text-gray-600">
+                    Don’t have an account?{" "}
+                    <Link
+                        to="/register-as"
+                        className="text-blue-500 hover:underline"
+                    >
+                        Sign up
+                    </Link>
+                </p>
+            </div>
         </div>
     );
 };

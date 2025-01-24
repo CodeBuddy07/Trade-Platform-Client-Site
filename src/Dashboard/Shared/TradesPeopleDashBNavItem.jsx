@@ -1,90 +1,96 @@
 import { BsChatFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { FaMarsAndVenus, FaQuestion } from "react-icons/fa6";
+import { FaToolbox, FaWallet, FaCogs, FaPuzzlePiece, FaTachometerAlt } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
-import { IoIosArrowBack } from "react-icons/io";
+import { FaQuestion } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
-
 const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
-
-
     const Routes = [
         {
-            path: '/my-trade-account/dashboard',
-            label: 'dashboard'
+            path: "/my-trade-account/dashboard",
+            label: "dashboard",
+            icon: <FaTachometerAlt size={25} />,
         },
         {
-            path: '/my-trade-account/profile',
-            label: 'profile'
+            path: "/my-trade-account/profile",
+            label: "profile",
+            icon: <CgProfile size={25} />,
         },
         {
-            path: 'my-trade-account/jobs',
-            label: 'jobs'
+            path: "/my-trade-account/jobs",
+            label: "jobs",
+            icon: <FaToolbox size={25} />,
         },
         {
-            path: 'my-trade-account/membership',
-            label: 'membership'
+            path: "/my-trade-account/membership",
+            label: "membership",
+            icon: <FaWallet size={25} />,
         },
         {
-            path: 'my-trade-account/billing',
-            label: 'billing'
-
+            path: "/my-trade-account/billing",
+            label: "billing",
+            icon: <FaWallet size={25} />,
         },
         {
-            path: 'my-trade-account/addons',
-            label: 'addons'
+            path: "/my-trade-account/addons",
+            label: "addons",
+            icon: <FaPuzzlePiece size={25} />,
         },
         {
-            path: 'my-trade-account/settings',
-            label: 'settings'
+            path: "/my-trade-account/settings",
+            label: "settings",
+            icon: <FaCogs size={25} />,
         },
-    ]
-
-
+    ];
 
     return (
-        <ul className="space-y-4  flex flex-col py-20 justify-between  h-full p-1 mt-10">
-
-
-
+        <ul className="space-y-4 flex flex-col py-20 justify-between h-full p-1 mt-10">
             <div className="flex flex-col gap-3 px-4">
-                {Routes.map(({ path, label }) => (
+                {Routes.map(({ path, label, icon }) => (
                     <NavLink
                         key={path}
                         to={path}
                         className={({ isActive }) =>
-                            `relative   text-nowrap  font-medium text-gray-700 transition-all
-                        ${isActive ? " after:w-full text-center" : " hover:bg-gray-200 rounded-md"}
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 
-                        after:w-0 after:h-0.5 after:bg-green-300 capitalize
-                        hover:after:w-full text-center hover:after:transition-all hover:after:duration-500`
+                            `relative text-nowrap font-medium text-gray-700 transition-all
+                            ${isActive ? "after:w-full text-center" : "hover:bg-gray-200 rounded-md"}
+                            after:content-[''] after:absolute after:bottom-0 after:left-0
+                            after:w-0 after:h-0.5 after:bg-green-300 capitalize
+                            hover:after:w-full text-center hover:after:transition-all hover:after:duration-500`
                         }
                     >
-                        <p className={`md:bg-gray-200 p-1 bg-gray-300 flex  items-center gap-3 md:p-2 rounded-lg ${isSidebarOpen ? "text-center" : ""} bg-gray-100 hover:bg-gray-200`}> <GoHome size={25}></GoHome>
-
+                        <p
+                            className={`md:bg-gray-200 p-1 bg-gray-300 flex items-center gap-3 md:p-2 rounded-lg ${
+                                isSidebarOpen ? "text-center" : ""
+                            } bg-gray-100 hover:bg-gray-200`}
+                        >
+                            {icon}
                             {!isSidebarOpen && <span>{label}</span>}
-
                         </p>
-
                     </NavLink>
                 ))}
             </div>
 
-
-
-            <li className="space-y-4 px-4 flex flex-col">
-                <hr className="border-gray-400 " />
-                <button className={`md:bg-gray-200 bg-gray-300  md:p-2 rounded-lg ${isSidebarOpen ? "text-center" : ""} bg-gray-100 hover:bg-gray-300`}>
+            <li className="space-y-4 px-4 flex flex-col border-t pt-5">
+                
+                <button
+                    className={`md:bg-gray-200 bg-gray-300 md:p-2 rounded-lg ${
+                        isSidebarOpen ? "text-center" : ""
+                    } bg-gray-100 hover:bg-gray-300`}
+                >
                     <a href="#!" className="flex items-center gap-4">
-                        <BsChatFill size={25}></BsChatFill >
+                        <BsChatFill size={25} />
                         {!isSidebarOpen && <span className="">Support</span>}
                     </a>
                 </button>
 
-                <button className={`md:bg-gray-200 bg-gray-300  md:p-2 rounded-lg ${isSidebarOpen ? "text-center" : ""} bg-gray-100 hover:bg-gray-300`}>
+                <button
+                    className={`md:bg-gray-200 bg-gray-300 md:p-2 rounded-lg ${
+                        isSidebarOpen ? "text-center" : ""
+                    } bg-gray-100 hover:bg-gray-300`}
+                >
                     <a href="#!" className="flex items-center gap-4">
-                        <FaQuestion size={25}></FaQuestion>
+                        <FaQuestion size={25} />
                         {!isSidebarOpen && <span className="">FAQ</span>}
                     </a>
                 </button>

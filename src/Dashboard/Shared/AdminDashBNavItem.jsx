@@ -47,8 +47,8 @@ const Routes=[
 
 
 
-        <li className="space-y-4 px-4 flex flex-col">
-            <hr className="border-gray-400 " />
+        <li className="space-y-4 px-4 flex flex-col border-t pt-5">
+
             <button className={`md:bg-gray-200 bg-gray-300  md:p-2 rounded-lg ${isSidebarOpen ? "text-center" : ""} bg-gray-100 hover:bg-gray-300`}>
                 <a href="#!" className="flex items-center gap-4">
                     <BsChatFill size={25}></BsChatFill >

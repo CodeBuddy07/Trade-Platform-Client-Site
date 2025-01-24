@@ -1,7 +1,7 @@
 
 const QuestionCard = ({title, category, description, author, answerCount, date,}) => {
   return (
-    <div className="p-4 border rounded-lg shadow-lg bg-white">
+    <div className=" lg:p-7 p-4 border rounded-lg shadow-lg bg-white">
       <h3 className="font-bold text-lg">{title}</h3>
       <p className="text-sm text-gray-500">
         {category} -{" "}

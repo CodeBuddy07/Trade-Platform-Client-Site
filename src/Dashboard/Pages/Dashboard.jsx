@@ -1,15 +1,85 @@
 
+import { IoMenuSharp } from 'react-icons/io5';
 import DashboardSidebar from './../Shared/DashboardSidebar';
+import { Outlet } from 'react-router-dom';
+import CustomerDashBNavItem from '../Shared/CustomerDashBNavItem';
+import TradesPeopleDashBNavItem from '../Shared/TradesPeopleDashBNavItem';
+import AdminDashBNavItem from '../Shared/AdminDashBNavItem';
+
 const Dashboard = () => {
+
+    const userRole = 'trades-people'
+
+
     return (
-        <div className="flex md:p-10 bg-gray-300">
-            <div className="col-span-4 h-screen sticky top-0">
-                <DashboardSidebar></DashboardSidebar>
-            </div>
-            <div className="md:p-10 p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem labore consequuntur laboriosam ab reiciendis eaque hic doloribus. Tempora voluptatem quisquam in est possimus, magni iure exercitationem, corporis repellendus quos atque natus repudiandae autem nesciunt provident ut odio, error nobis cum saepe minus aliquid? Fugit, rerum officiis, eaque commodi enim repellat tempora quod maiores dignissimos asperiores aliquam, laborum at reiciendis accusamus alias reprehenderit iusto quaerat ea id nesciunt tenetur eveniet laudantium illo. Dicta corrupti aliquid ab. Laudantium porro asperiores rerum hic repudiandae doloremque a voluptate illo atque, alias deleniti ipsum soluta ratione, eligendi cumque vel mollitia excepturi quidem facilis. Reiciendis inventore consequatur deserunt repellendus incidunt. Nostrum alias commodi doloribus atque deleniti. Magni asperiores fugit est dicta quibusdam deserunt esse sequi, alias tempora soluta et quasi perspiciatis, vitae natus similique ex itaque illo officia nam? Quae aut a quam fugiat asperiores esse illo id? Odio fuga impedit commodi saepe laborum asperiores perferendis eius assumenda. Libero reprehenderit officiis sint ipsam saepe voluptas recusandae. Quasi repudiandae dolores, vitae amet cum commodi natus tempore suscipit voluptatem architecto soluta incidunt libero aliquam velit unde beatae doloremque deserunt dolorem! Aliquid, modi doloremque illo id perferendis eaque delectus impedit nihil sint facere esse sed. Debitis quisquam autem asperiores? Minima corporis mollitia facere libero unde molestias cum rem veritatis dignissimos tempore fuga maxime quaerat alias, aut dicta earum modi harum obcaecati quod facilis quos ducimus quisquam rerum saepe! Possimus reprehenderit earum minima laboriosam ad ratione nemo odit commodi ab dolorum architecto id aliquid, labore, natus illum temporibus magnam. Non aperiam ducimus eius consequuntur, eligendi dolor repudiandae labore repellat corrupti! Molestiae totam eaque voluptatum nulla dicta debitis consequatur vero tempora, nihil numquam aliquid fugiat beatae magni laudantium! Et facilis laboriosam dolor rerum? Fuga consequatur perspiciatis, odit quidem tenetur minima omnis, vero odio voluptate nostrum laudantium consequuntur quam id. Voluptatum quae temporibus officiis expedita sint numquam culpa molestiae illo dignissimos, impedit dicta minima accusamus quod, illum odit voluptate autem molestias quibusdam mollitia velit nulla minus eaque. Officiis eos reiciendis consectetur expedita aliquam error adipisci quasi necessitatibus amet eveniet, temporibus natus? Officiis ipsum mollitia architecto consequatur aperiam odit, quos cupiditate totam, neque at aliquam a ut, eum possimus tempore maxime tempora corrupti aut odio soluta iusto reiciendis inventore dolor suscipit! Itaque quibusdam inventore, blanditiis quasi cum deleniti nemo ducimus necessitatibus veniam impedit nostrum, fugit illum ipsam porro tenetur dolores quam ullam ab. Delectus voluptates, ullam et, officia beatae eum optio numquam aliquid a quos voluptatum voluptatem vitae. Eligendi aperiam nisi explicabo sequi ipsam accusantium enim fuga, recusandae dolorem, quo, quibusdam doloremque. Odit ex dolores neque voluptatum at illum assumenda earum vel ullam ipsam. Consequatur, ut. Ullam, officia. Cumque mollitia commodi, dignissimos excepturi dolorum voluptatum provident officiis minus repudiandae. Obcaecati pariatur laboriosam hic corporis consequuntur optio ipsum rem? Quod eum eius cumque debitis cupiditate reprehenderit quisquam animi dolores nam tenetur, quas nobis placeat cum id at illo dolorum sunt magni, officiis nisi in amet exercitationem iure. Beatae nobis nam quaerat quasi eos eius veritatis, natus voluptas amet quod dolor magnam perferendis a omnis fugiat, fuga porro? Facere, doloribus! Deleniti quis eveniet, possimus voluptates recusandae totam ipsam vero facilis at quaerat delectus doloribus excepturi atque aspernatur mollitia eius, numquam quibusdam ab sint! Dolorem adipisci officiis non eligendi laudantium, iure eius eveniet quod delectus ratione incidunt deserunt tenetur magni, perferendis possimus cum saepe omnis amet in dolores earum laborum molestiae reiciendis odio? Numquam mollitia sed neque. Nesciunt nemo sequi optio, autem aut a reprehenderit quibusdam maiores illo ipsum earum saepe, eos ex modi natus asperiores soluta rem? Dolor ab architecto quo voluptas cupiditate placeat cum sapiente quia magnam, reprehenderit voluptates expedita odit. Rerum similique dolore magni laudantium sed quod fugit eius fuga repellendus expedita, non voluptatibus iusto impedit enim tempore sit a libero porro saepe numquam cumque laborum. Beatae obcaecati suscipit vel eveniet placeat excepturi consequatur molestias quisquam, fugiat cum dolores aspernatur rem iusto quis, odio tenetur molestiae sunt, numquam alias consequuntur laudantium voluptate libero rerum sint? Recusandae nihil laboriosam vel expedita distinctio iste commodi! Quas deleniti minima, sunt culpa repudiandae debitis, iure aut in id quo, commodi fugiat eaque! Cumque ducimus exercitationem consequuntur error praesentium reiciendis doloribus beatae, dolores corporis non quasi pariatur nisi repudiandae nam temporibus. Praesentium ab, rem optio architecto assumenda totam voluptas adipisci. Ducimus enim quibusdam repellat officiis earum temporibus quidem molestiae possimus dignissimos nemo. Sit vitae id quasi eaque at! Aspernatur temporibus eaque laborum cupiditate sapiente possimus ipsa, blanditiis minima eligendi voluptatibus? Inventore accusamus officiis nisi, animi quis accusantium unde, quos aliquam esse molestias optio perferendis minima odio ratione voluptatem suscipit quod! Cupiditate fugiat perferendis neque excepturi quis quae officiis nihil sed dolore est voluptates impedit, eveniet necessitatibus facilis modi nam praesentium sunt totam veniam, delectus quod deserunt eum? Quae est quibusdam, officiis minima ducimus deleniti, laborum fugiat magni repellendus perferendis soluta aliquam? Quasi quas laborum ullam dicta maiores eos nam ipsam ex eligendi repellendus facilis doloremque consequatur incidunt illum cum modi nihil labore, eveniet consectetur quae mollitia omnis neque! Sequi, temporibus. Minima asperiores accusantium possimus totam qui magni explicabo eligendi, inventore earum ab expedita delectus similique molestias vero quaerat? Sit quam a recusandae corporis totam, numquam dicta aliquam hic cumque architecto mollitia, blanditiis amet, temporibus possimus quisquam aspernatur exercitationem? Fugit laboriosam voluptates debitis ipsam veniam possimus doloremque aperiam necessitatibus explicabo repellendus qui tempora magni mollitia repudiandae inventore quo sint, doloribus omnis obcaecati aut corporis vitae? Fugit, consequatur velit nesciunt debitis quibusdam perferendis doloremque labore eveniet incidunt pariatur ab dolore explicabo facere nulla ad est saepe eligendi voluptas dolor veritatis architecto? Iste, animi fugit voluptatum repudiandae vitae debitis. Possimus, laborum voluptatibus? Provident impedit, numquam repellat, quia ad ipsam distinctio doloremque, exercitationem est ut nostrum temporibus deserunt quod quisquam cupiditate voluptatum molestiae velit! Pariatur, ab rem? Quas necessitatibus neque officiis accusantium praesentium aliquid odio iusto pariatur dignissimos quos vel, impedit sapiente error eius voluptatem voluptates deserunt doloribus magnam voluptas. Debitis aperiam, sequi earum fugiat porro iste inventore quo. Dicta voluptate cupiditate qui quisquam deserunt asperiores distinctio adipisci architecto possimus eum. Nesciunt iste minima quos, odit aliquid est recusandae! Blanditiis, nisi reprehenderit?
+        <div className="md:flex text-gray-700 bg-gray-300  ">
+            
+            
+            {/* this is dashboard sidebar for md and lg device */}
+
+            <div className="col-span-4 min-h-screen  h-full hidden md:block sticky top-0">
+                <DashboardSidebar userRole={userRole}></DashboardSidebar>
             </div>
 
+
+
+            {/* this is dashboard sidebar for sm device */}
+
+            <div className="navbar md:hidden  bg-base-100">
+                <div className="drawer drawer-start ">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content">
+                        {/* Page content here */}
+                        <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary">  <IoMenuSharp size={25} /></label>
+                    </div>
+                    <div className="drawer-side ">
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <ul className="menu bg-base-200 text-base-content min-h-full w-60 ">
+                            {/* Sidebar content here */}
+                            {
+
+                                userRole == 'customer' ? <CustomerDashBNavItem></CustomerDashBNavItem> : userRole == 'trades-people' ? <TradesPeopleDashBNavItem></TradesPeopleDashBNavItem> : <AdminDashBNavItem></AdminDashBNavItem>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div className="flex-1">
+                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                </div>
+                <div className="flex-none gap-2">
+
+                    <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            {/* this is dashboard content */}
+
+            <div className="md:p-10 p-2">
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

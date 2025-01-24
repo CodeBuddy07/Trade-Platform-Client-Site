@@ -9,6 +9,12 @@ import Dashboard from "../Dashboard/Pages/Dashboard";
 import HowItWorks from "../Pages/HowItWorks/HowItWorks";
 import AskATrade from "../Pages/AskATrade/AskATrade";
 import ServiceSeeker from "../Pages/Registration/ServiceSeeker";
+import CustomerProfilePage from './../Dashboard/Pages/CustomerProfilePage/CustomerProfilePage';
+import CustomerDashboard from "../Dashboard/Pages/CustomerProfilePage/CustomerDashboard";
+import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesDashboard";
+import TradesProfilePage from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage";
+import AdminDashboard from "../Dashboard/Pages/AdminProfilePage/AdminDashboard";
+import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePage";
 
 const Routes = createBrowserRouter([
     {
@@ -21,23 +27,20 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'how-it-works',
-                element: <HowItWorks/>
+                element: <HowItWorks />
             },
             {
                 path: 'ask-a-trade',
-                element: <AskATrade/>
+                element: <AskATrade />
             },
             {
                 path: 'register-as',
                 element: <AccountCategory></AccountCategory>,
             },
-            {
-                path: 'admin/dashboard',
-                element:<Dashboard></Dashboard>
-            },
+
             {
                 path: 'register-as/service-seeker',
-                element: <ServiceSeeker/>
+                element: <ServiceSeeker />
 
             },
             {
@@ -54,7 +57,60 @@ const Routes = createBrowserRouter([
     },
     {
         path: 'account/login',
-        element: <Login/>
+        element: <Login />
+    },
+
+
+
+    // customer dashboard all routes
+    {
+        path: 'my-account',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'dashboard',
+                element: <CustomerDashboard></CustomerDashboard>
+            },
+            {
+                path: 'profile',
+                element: <CustomerProfilePage></CustomerProfilePage>
+            }
+        ]
+    },
+
+
+
+    // trades-people dashboard all routes
+    {
+        path: 'my-trade-account',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'dashboard',
+                element: <TradesDashboard></TradesDashboard>
+            },
+            {
+                path: 'profile',
+                element: <TradesProfilePage></TradesProfilePage>
+            }
+        ]
+    },
+
+
+    // admin dashboard all routes
+    {
+        path: 'admin',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'dashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: 'profile',
+                element: <AdminProfilePage></AdminProfilePage>
+            }
+        ]
     },
 ])
 

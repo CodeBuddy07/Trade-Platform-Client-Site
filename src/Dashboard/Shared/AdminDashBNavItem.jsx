@@ -31,7 +31,7 @@ const Routes=[
                         `relative   text-nowrap  font-medium text-gray-700 transition-all
                     ${isActive ? " after:w-full text-center" : " hover:bg-gray-200 rounded-md"}
                     after:content-[''] after:absolute after:bottom-0 after:left-0 
-                    after:w-0 after:h-0.5 after:bg-green-300 capitalize
+                    after:w-0 after:h-0.5 after:bg-pick-500 capitalize
                     hover:after:w-full text-center hover:after:transition-all hover:after:duration-500`
                     }
                 >

@@ -11,7 +11,7 @@ import AskATrade from "../Pages/AskATrade/AskATrade";
 import ServiceSeeker from "../Pages/Registration/ServiceSeeker";
 import CustomerProfilePage from './../Dashboard/Pages/CustomerProfilePage/CustomerProfilePage';
 import CustomerDashboard from "../Dashboard/Pages/CustomerProfilePage/CustomerDashboard";
-import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesDashboard";
+import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage/TradesDashboard";
 import TradesProfilePage from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage";
 import AdminDashboard from "../Dashboard/Pages/AdminProfilePage/AdminDashboard";
 import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePage";

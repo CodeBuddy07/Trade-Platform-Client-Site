@@ -45,8 +45,8 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
     ];
 
     return (
-        <ul className="space-y-4 flex flex-col py-20 justify-between h-full p-1 mt-10">
-            <div className="flex flex-col gap-3 px-4">
+        <ul className="space-y-6 flex flex-col py-20 justify-between h-full p-1 ">
+            <div className="flex flex-col gap-6 px-4">
                 {Routes.map(({ path, label, icon }) => (
                     <NavLink
                         key={path}
@@ -55,12 +55,12 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
                             `relative text-nowrap font-medium text-gray-700 transition-all
                             ${isActive ? "after:w-full text-center" : "hover:bg-gray-200 rounded-md"}
                             after:content-[''] after:absolute after:bottom-0 after:left-0
-                            after:w-0 after:h-0.5 after:bg-green-300 capitalize
+                            after:w-0 after:h-0.5 after:bg-pink-500 capitalize
                             hover:after:w-full text-center hover:after:transition-all hover:after:duration-500`
                         }
                     >
                         <p
-                            className={`md:bg-gray-200 p-1 bg-gray-300 flex items-center gap-3 md:p-2 rounded-lg ${
+                            className={`md:bg-gray-100 p-1 bg-gray-300 flex items-center gap-3 md:p-2 rounded-lg ${
                                 isSidebarOpen ? "text-center" : ""
                             } bg-gray-100 hover:bg-gray-200`}
                         >
@@ -71,7 +71,7 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
                 ))}
             </div>
 
-            <li className="space-y-4 px-4 flex flex-col border-t pt-5">
+            <li className="space-y-4 px-4 flex flex-col border-t border-gray-300 pt-5">
                 
                 <button
                     className={`md:bg-gray-200 bg-gray-300 md:p-2 rounded-lg ${

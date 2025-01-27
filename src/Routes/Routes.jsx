@@ -11,15 +11,19 @@ import AskATrade from "../Pages/AskATrade/AskATrade";
 import ServiceSeeker from "../Pages/Registration/ServiceSeeker";
 import CustomerProfilePage from './../Dashboard/Pages/CustomerProfilePage/CustomerProfilePage';
 import CustomerDashboard from "../Dashboard/Pages/CustomerProfilePage/CustomerDashboard";
-import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesDashboard";
+import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage/TradesDashboard";
 import TradesProfilePage from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage";
 import AdminDashboard from "../Dashboard/Pages/AdminProfilePage/AdminDashboard";
 import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePage";
+import JobPostPage from "../Pages/JobPostPage/JobPostPage";
+import CostGuides from "../Pages/CostGuides/CostGuides";
+import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
 
 const Routes = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout></MainLayout>,
+        element: <MainLayout/>,
+        errorElement:<PlanningToDesign/>,
         children: [
             {
                 index: true,
@@ -34,8 +38,16 @@ const Routes = createBrowserRouter([
                 element: <AskATrade />
             },
             {
+                path: 'post-job',
+                element: <JobPostPage />
+            },
+            {
+                path: 'cost-guides',
+                element: <CostGuides/>
+            },
+            {
                 path: 'register-as',
-                element: <AccountCategory></AccountCategory>,
+                element: <AccountCategory/>,
             },
 
             {
@@ -45,12 +57,12 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'register-as/trades-people',
-                element: <RegistrationTrade></RegistrationTrade>
+                element: <RegistrationTrade/>
 
             },
             {
                 path: 'account/password-reset',
-                element: <ResetPassword></ResetPassword>
+                element: <ResetPassword/>
 
             },
         ]
@@ -65,15 +77,16 @@ const Routes = createBrowserRouter([
     // customer dashboard all routes
     {
         path: 'my-account',
-        element: <Dashboard></Dashboard>,
+        element: <Dashboard/>,
+        errorElement:<PlanningToDesign/>,
         children: [
             {
                 path: 'dashboard',
-                element: <CustomerDashboard></CustomerDashboard>
+                element: <CustomerDashboard/>
             },
             {
                 path: 'profile',
-                element: <CustomerProfilePage></CustomerProfilePage>
+                element: <CustomerProfilePage/>
             }
         ]
     },
@@ -83,15 +96,18 @@ const Routes = createBrowserRouter([
     // trades-people dashboard all routes
     {
         path: 'my-trade-account',
-        element: <Dashboard></Dashboard>,
+        element: <Dashboard/>,
+        errorElement:<PlanningToDesign/>,
         children: [
             {
                 path: 'dashboard',
-                element: <TradesDashboard></TradesDashboard>
+                // element: <TradesDashboard/>
+                element:<PlanningToDesign/>,
+
             },
             {
                 path: 'profile',
-                element: <TradesProfilePage></TradesProfilePage>
+                element: <TradesProfilePage/>
             }
         ]
     },
@@ -100,15 +116,16 @@ const Routes = createBrowserRouter([
     // admin dashboard all routes
     {
         path: 'admin',
-        element: <Dashboard></Dashboard>,
+        element: <Dashboard/>,
+        errorElement:<PlanningToDesign/>,
         children: [
             {
                 path: 'dashboard',
-                element: <AdminDashboard></AdminDashboard>
+                element: <AdminDashboard/>
             },
             {
                 path: 'profile',
-                element: <AdminProfilePage></AdminProfilePage>
+                element: <AdminProfilePage/>
             }
         ]
     },

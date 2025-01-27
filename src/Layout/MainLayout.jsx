@@ -56,11 +56,11 @@ const MainLayout = () => {
                 <label htmlFor="my-drawer-3" className=" lg:hidden mr-5">
                   <IoMenuSharp size={25} />
                 </label>
-                <Link to='/my-trade-account/dashboard'>
+                <Link to='/my-trade-account/profile'>
                   <img
                     src={logo}
                     alt="Logo"
-                    className="w-36 h-auto lg:block hidden mr-5"
+                    className="w-40  bg-transparent  h-auto lg:block hidden mr-5"
                   /></Link>
               </div>
               <div className="hidden lg:block">{navContent}</div>

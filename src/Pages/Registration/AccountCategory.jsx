@@ -24,7 +24,7 @@ const AccountCategory = () => {
                                 Need skilled professionals for your projects? Sign up to post jobs and hire trusted tradespeople today.
                             </p>
                             <div className="flex justify-center md:justify-start w-full">
-                                <button className="hover:shadow-md hover:shadow-blue-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 border-none transition-transform hover:scale-105">
+                                <button className="hover:shadow-md hover:shadow-blue-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-blue-600 border-none transition-transform hover:scale-105">
                                     I'm Looking for Services
                                 </button>
                             </div>
@@ -51,7 +51,7 @@ const AccountCategory = () => {
                             </p>
                             <div className="flex justify-center md:justify-start w-full">
                                 <Link to={'/register-as/trades-people'}>
-                                    <button className="hover:shadow-md hover:shadow-green-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-gradient-to-r from-green-500 to-green-700 border-none transition-transform hover:scale-105">
+                                    <button className="hover:shadow-md hover:shadow-green-500 mt-8 px-8 py-3 btn text-white text-lg rounded-lg bg-green-600 border-none transition-transform hover:scale-105">
                                         Register as Tradesperson
                                     </button>
                                 </Link>

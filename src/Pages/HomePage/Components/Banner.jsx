@@ -9,7 +9,7 @@ const Banner = () => {
 
       {/* Content */}
       <div className="relative container mx-auto flex flex-col items-center text-center py-20 px-5 ">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
           Find Trusted Tradespeople Near You
         </h1>
         <p className="mt-4 text-lg md:text-xl max-w-2xl">

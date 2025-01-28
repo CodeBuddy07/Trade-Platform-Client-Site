@@ -25,7 +25,7 @@ const Dashboard = () => {
     const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   
     return (
-      <div className="flex flex-col md:flex-row text-gray-800 bg-gray-200 h-screen ">
+      <div className="flex flex-col md:flex-row text-gray-800 bg-gray-200 h-screen overflow-y-scroll">
         {/* Sidebar for medium and larger devices */}
         <DashboardSidebar
           userRole={userRole}

@@ -262,7 +262,7 @@ const RegistrationTrade = () => {
               to={"/account/login"}
               className="text-green-600 hover:underline underline-offset-4 underline"
             >
-              Login now
+              login now
             </Link>
           </p>
         </div>

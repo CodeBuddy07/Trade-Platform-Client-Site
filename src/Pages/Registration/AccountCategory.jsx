@@ -18,7 +18,7 @@ const AccountCategory = () => {
                         </div>
                         <div className="md:pl-10 space-y-4 flex justify-center items-start flex-col">
                             <h2 className="text-3xl font-semibold text-blue-700">
-                                Service Seekers
+                                Customer Portal
                             </h2>
                             <p className="text-lg text-gray-600">
                                 Need skilled professionals for your projects? Sign up to post jobs and hire trusted tradespeople today.
@@ -44,7 +44,7 @@ const AccountCategory = () => {
                         </div>
                         <div className="md:pl-10 space-y-4 flex justify-center items-start flex-col">
                             <h2 className="text-3xl font-semibold text-green-700">
-                                Tradespeople
+                                Trades Person Portal
                             </h2>
                             <p className="text-lg text-gray-600">
                                 Looking for work opportunities? Register as a tradesperson and gain access to hundreds of job postings daily to grow your business.

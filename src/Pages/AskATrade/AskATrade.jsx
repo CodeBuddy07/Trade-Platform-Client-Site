@@ -13,7 +13,7 @@ const AskATrade = () => {
       title: "Wooden saddle point",
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad exercitationem neque magni amet ut voluptas libero, dignissimos repellat voluptates. Molestiae eveniet magni neque id provident nam nemo voluptate rerum amet.",
-      category: "Carpenter",
+      category: "Joiner",
     },
     {
       id: 2,
@@ -55,7 +55,7 @@ const AskATrade = () => {
       title: "Remove Wooden Saddles",
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad exercitationem neque magni amet ut voluptas libero, dignissimos repellat voluptates. Molestiae eveniet magni neque id provident nam nemo voluptate rerum amet.",
-      category: "Carpenter",
+      category: "Joiner",
     },
     {
       id: 8,

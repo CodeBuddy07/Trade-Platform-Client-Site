@@ -18,12 +18,12 @@ const JoinAsTrades = () => {
                 <div className="w-full md:w-1/2 space-y-6">
                     <h3 className="text-3xl font-semibold text-green-600">Looking for More Work?</h3>
                     <p className="text-lg text-gray-700">
-                        Expand your business with MyBuilder. Sign up for free and start receiving job opportunities that match your expertise. Whether you're looking for large projects or smaller tasks, you'll find the right leads to grow your business.
+                        Expand your business with MyTradePerson. Customers can sign up for free and connect with trusted tradespeople. Tradespeople who register will receive a one-month free trial to explore our platform and connect with potential clients.
                     </p>
                     
                     {/* CTA Button */}
                     <button className="text-lg font-semibold text-white bg-gradient-to-r from-green-500 to-green-700 hover:bg-green-800 rounded-lg px-8 py-3 shadow-md hover:shadow-lg transition duration-300">
-                        Join for Free
+                        Sign up for free
                     </button>
                 </div>
             </div>

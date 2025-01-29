@@ -58,7 +58,7 @@ const QuestionForm = () => {
                   <option value="">Choose a category</option>
                   <option value="Electrician">Electrician</option>
                   <option value="Plumber">Plumber</option>
-                  <option value="Carpenter">Carpenter</option>
+                  <option value="Joiner">Joiner</option>
                   <option value="Painter">Painter</option>
                 </select>
               </div>

@@ -1,5 +1,7 @@
 import Slider from "react-slick";
 import plumber from "./../../../files/plumber.jpg";
+import electician from "./../../../files/electician.jpg";
+import joiner from "./../../../files/joiner.jpg";
 
 const AllTrades = () => {
   const settings = {
@@ -29,6 +31,7 @@ const AllTrades = () => {
   const trades = [
     {
       title: "Electrician",
+      img: electician,
       description:
         "Ensure your home’s electrical systems are safe and efficient with our expert electricians. From installations to repairs, we handle it all with precision and care.",
       count: "28,765 electricians",
@@ -36,16 +39,18 @@ const AllTrades = () => {
     },
     {
       title: "Plumber",
+      img: plumber,
       description:
         "Fix leaks and improve your plumbing with our skilled plumbers. Whether it’s installations or emergency repairs, we’ve got you covered.",
       count: "19,432 plumbers",
       location: "in the UK",
     },
     {
-      title: "Carpenter",
+      title: "Joiner",
+      img: joiner,
       description:
-        "Craft beautiful and functional furniture or repair woodwork with the expertise of our carpenters. From cabinets to custom designs.",
-      count: "10,200 carpenters",
+        "Craft beautiful and functional furniture or repair woodwork with the expertise of our Joiners. From cabinets to custom designs.",
+      count: "10,200 Joiners",
       location: "in the UK",
     },
     // Add more trades here as needed...
@@ -66,7 +71,7 @@ const AllTrades = () => {
             <div className=" overflow-hidden bg-white border border-gray-300 shadow-md rounded-lg">
               {/* Image Section */}
               <img
-                src={plumber}
+                src={trade.img}
                 alt="Trade Image"
                 className="object-cover w-full h-56 rounded-t-lg"
               />

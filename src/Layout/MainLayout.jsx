@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
-import logo from "./../files/logo.png";
+import logo from "./../files/new Logo.png";
 import { IoMenuSharp } from "react-icons/io5";
 
 const MainLayout = () => {
@@ -9,7 +9,7 @@ const MainLayout = () => {
     { path: "/how-it-works", label: "How it works" },
     { path: "/ask-a-trade", label: "Ask a trade" },
     { path: "/cost-guides", label: "Cost guides" },
-    { path: "/account/login", label: "Login" },
+    { path: "/account/login", label: "Sign in" },
   ];
 
   const navContent = (
@@ -57,11 +57,14 @@ const MainLayout = () => {
                   <IoMenuSharp size={25} />
                 </label>
                 <Link to='/my-trade-account/profile'>
-                  <img
-                    src={logo}
-                    alt="Logo"
-                    className="w-40  bg-transparent  h-auto lg:block hidden mr-5"
-                  /></Link>
+                  <div className="h-20">
+                    <img
+                      src={logo}
+                      alt="Logo"
+                      className=" bg-transparent  h-full w-full  lg:block hidden mr-5"
+                    />
+                  </div>
+                </Link>
               </div>
               <div className="hidden lg:block">{navContent}</div>
             </div>

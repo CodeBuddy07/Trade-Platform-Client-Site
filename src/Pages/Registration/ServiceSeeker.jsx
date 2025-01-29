@@ -62,7 +62,9 @@ const ServiceSeeker = () => {
           <h2 className="text-3xl font-bold text-center text-gray-800">
             Create a Customer Account
           </h2>
-          <p className="text-gray-600 text-center">Join and Get your work done.</p>
+          <p className="text-gray-600 text-center">
+            Join and Get your work done.
+          </p>
         </div>
 
         <div className="flex justify-center items-center relative">
@@ -173,12 +175,14 @@ const ServiceSeeker = () => {
             onChange={(e) => setSelectedTradeArea(e.target.value)}
             className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-green-500 focus:outline-none"
           >
-            <option value="">Select a trade area</option>
-            <option value="Construction">Construction</option>
-            <option value="Electrical">Electrical</option>
-            <option value="Plumbing">Plumbing</option>
-            <option value="Painting">Painting</option>
-            <option value="Other">Other</option>
+
+              <option value="">Select a city in Scotland</option>
+              <option value="Edinburgh">Edinburgh</option>
+              <option value="Glasgow">Glasgow</option>
+              <option value="Aberdeen">Aberdeen</option>
+              <option value="Dundee">Dundee</option>
+              <option value="Inverness">Inverness</option>
+
           </select>
         </div> */}
 

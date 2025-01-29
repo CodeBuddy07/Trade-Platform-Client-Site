@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/HomePage/Home";
-import login from "../Pages/login/login";
+import Login from "../Pages/Login/Login";
 import AccountCategory from "../Pages/Registration/AccountCategory";
 import ResetPassword from "../Components/ResetPassword";
 import RegistrationTrade from "../Pages/Registration/RegistrationTrade";
@@ -18,7 +18,7 @@ import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePa
 import JobPostPage from "../Pages/JobPostPage/JobPostPage";
 import CostGuides from "../Pages/CostGuides/CostGuides";
 import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
-import Login from "../Pages/login/login";
+import Login from "../Pages/Login/Login";
 
 const Routes = createBrowserRouter([
     {
@@ -70,7 +70,7 @@ const Routes = createBrowserRouter([
     },
     {
         path: 'account/login',
-        element: <Login></Login>
+        element: <Login/>
     },
 
 

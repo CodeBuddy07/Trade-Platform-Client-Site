@@ -3,13 +3,17 @@ import { CiSearch } from "react-icons/ci";
 const Banner = () => {
 
   return (
-    <header className=" bg-gradient-to-r from-gray-800 to-green-600 text-white">
+    <header className=" bg-gradient-to-r from-purple-500 to-green-500 text-white">
       {/* Background overlay */}
       <div className=" bg-black opacity-30"></div>
 
       {/* Content */}
       <div className="relative container mx-auto flex flex-col items-center text-center py-20 px-5 ">
+
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+
           Find Trusted Tradespeople Near You
         </h1>
         <p className="mt-4 text-lg md:text-xl max-w-2xl">

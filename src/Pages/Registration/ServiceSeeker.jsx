@@ -60,7 +60,7 @@ const ServiceSeeker = () => {
       >
         <div>
           <h2 className="text-3xl font-bold text-center text-gray-800">
-            Create a Service Seeker Account
+            Create a Customer Account
           </h2>
           <p className="text-gray-600 text-center">
             Join and Get your work done.
@@ -163,7 +163,7 @@ const ServiceSeeker = () => {
         </div>
 
         {/* Trade Area */}
-        <div className="w-full">
+        {/* <div className="w-full">
           <label
             htmlFor="tradeArea"
             className="text-sm font-medium text-gray-600"
@@ -184,7 +184,7 @@ const ServiceSeeker = () => {
               <option value="Inverness">Inverness</option>
 
           </select>
-        </div>
+        </div> */}
 
         {/* Email and Password */}
         <div className="space-y-6">

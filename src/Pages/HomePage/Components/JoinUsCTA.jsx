@@ -10,7 +10,7 @@ const JoinUsCTA = () => {
             Don't miss the chance to be part of something bigger!
           </p>
           <button className="px-8 py-4 text-xl bg-gradient-to-r from-green-500 to-green-700 text-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform">
-            Join Now
+            Sign up now
           </button>
         </div>
   

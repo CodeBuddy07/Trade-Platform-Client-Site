@@ -12,7 +12,7 @@ const TradeCategory = () => {
               Plumber
             </p>
             <p className="bg-gray-100 px-6 py-3 rounded-md hover:cursor-pointer hover:shadow-md">
-              Carpenter
+              Joiner
             </p>
             <p className="bg-gray-100 px-6 py-3 rounded-md hover:cursor-pointer hover:shadow-md">
               Painter

@@ -9,11 +9,11 @@ const WhyChooseUs = () => {
       <div className="text-center space-y-4">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-green-800">
-            Why MyBuilder is Your Trusted Choice
+            Why MyTradePerson is Your Trusted Choice
           </h1>
           <p className="max-w-3xl mx-auto text-base md:text-lg">
             Finding the right tradesperson for your project can be challenging.
-            MyBuilder makes it simple and reliable to connect with trusted
+            MyTradePerson makes it simple and reliable to connect with trusted
             professionals.
           </p>
           <hr className="w-16 mx-auto mt-2 border-2 border-green-600" />
@@ -73,8 +73,7 @@ const WhyChooseUs = () => {
               <h4 className="text-xl font-semibold">Stay in Control</h4>
               <p className="text-sm md:text-base mt-2">
                 Browse profiles, check work history, and review feedback before
-                making your decision. Only the tradespeople you approve can
-                reach out to you.
+                making your decision. Only three tradespeople can reach out, and you decide who completes the work.
               </p>
             </div>
           </div>

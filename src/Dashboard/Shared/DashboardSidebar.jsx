@@ -8,7 +8,7 @@ import AdminDashBNavItem from "../Shared/AdminDashBNavItem";
 const DashboardSidebar = ({ isSidebarOpen, toggleSidebar, userRole }) => {
 
     return (
-        <aside className="hidden overflow-auto md:block bg-white shadow-lg sticky top-0 overscroll-auto">
+        <aside className="hidden overflow-auto md:block bg-white shadow-lg sticky top-0 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-200">
 
 
             <div className={`${!isSidebarOpen ? 'p-6' : 'p-0'} border-b border-gray-300 h-20`}>

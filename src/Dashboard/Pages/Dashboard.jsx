@@ -25,7 +25,7 @@ const Dashboard = () => {
     const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   
     return (
-      <div className="flex flex-col md:flex-row text-gray-800 bg-gray-200 h-screen overflow-y-scroll">
+      <div className="flex flex-col md:flex-row text-gray-800 bg-gray-200 h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-200 ">
         {/* Sidebar for medium and larger devices */}
         <DashboardSidebar
           userRole={userRole}
@@ -39,7 +39,7 @@ const Dashboard = () => {
         {/* Main content area */}
         <main className="flex-1 p-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">Welcome, {userRole}</h2>
+            <h2 className="text-2xl font-semibold">Welcome ....</h2>
             <FaUserCircle size={30} className="text-gray-600" />
           </div>
           <div className="mt-4 p-10 rounded-lg ">

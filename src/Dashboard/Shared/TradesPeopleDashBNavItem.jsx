@@ -1,16 +1,20 @@
 import { BsChatFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import { FaToolbox, FaWallet, FaCogs, FaPuzzlePiece, FaTachometerAlt } from "react-icons/fa";
-import { GoHome } from "react-icons/go";
 import { FaQuestion } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { PiBagLight } from "react-icons/pi";
+import { MdOutlineCardMembership, MdSupportAgent } from "react-icons/md";
+import { LiaWalletSolid } from "react-icons/lia";
+import { TbPlus } from "react-icons/tb";
+import { SlSettings } from "react-icons/sl";
 
 const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
     const Routes = [
         {
             path: "/my-trade-account/dashboard",
             label: "dashboard",
-            icon: <FaTachometerAlt size={25} />,
+            icon: <LuLayoutDashboard size={25} />,
         },
         {
             path: "/my-trade-account/profile",
@@ -20,27 +24,27 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
         {
             path: "/my-trade-account/jobs",
             label: "jobs",
-            icon: <FaToolbox size={25} />,
+            icon: <PiBagLight size={25} />,
         },
         {
             path: "/my-trade-account/membership",
             label: "membership",
-            icon: <FaWallet size={25} />,
+            icon: <MdOutlineCardMembership size={25} />,
         },
         {
             path: "/my-trade-account/billing",
             label: "billing",
-            icon: <FaWallet size={25} />,
+            icon: <LiaWalletSolid  size={25} />,
         },
         {
             path: "/my-trade-account/addons",
             label: "addons",
-            icon: <FaPuzzlePiece size={25} />,
+            icon: <TbPlus size={25} />,
         },
         {
             path: "/my-trade-account/settings",
             label: "settings",
-            icon: <FaCogs size={25} />,
+            icon: <SlSettings size={25} />,
         },
     ];
 
@@ -79,7 +83,7 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
                     } bg-gray-100 hover:bg-gray-300`}
                 >
                     <a href="#!" className="flex items-center gap-4">
-                        <BsChatFill size={25} />
+                        <MdSupportAgent size={25} />
                         {!isSidebarOpen && <span className="">Support</span>}
                     </a>
                 </button>

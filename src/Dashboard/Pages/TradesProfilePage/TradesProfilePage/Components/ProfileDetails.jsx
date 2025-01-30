@@ -60,8 +60,8 @@ const ProfileDetails = () => {
                 </div>
                 <div className=" flex-1">
                     <textarea
-                        placeholder="Bio"
-                        className="textarea  focus:outline-none h-40 w-full textarea-bordered textarea-md  "></textarea>
+                        placeholder="Write about your trade"
+                        className="textarea  focus:outline-none h-40 w-full border border-gray-300 bg-gray-50 p-2 textarea-md  "></textarea>
                     <h6 className="text-start mt-1">Description</h6>
                 </div>
             </div>
@@ -77,7 +77,7 @@ const ProfileDetails = () => {
                         <input
                             type="text"
                             placeholder="First Name"
-                            className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
+                            className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                         />
                     </div>
                     <div>
@@ -87,7 +87,7 @@ const ProfileDetails = () => {
                         <input
                             type="text"
                             placeholder="Last Name"
-                            className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
+                            className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                         />
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const ProfileDetails = () => {
                         <input
                             type="text"
                             placeholder="First Name"
-                            className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
+                            className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                         />
                     </div>
                     <div>
@@ -109,7 +109,7 @@ const ProfileDetails = () => {
                         <input
                             type="text"
                             placeholder="Last Name"
-                            className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
+                            className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                         />
                     </div>
                 </div>
@@ -118,7 +118,7 @@ const ProfileDetails = () => {
                         <label className="block text-sm font-medium text-gray-700">
                             Business Type <span className="text-red-500">*</span>
                         </label>
-                        <select className="w-full px-4 py-2 border capitalize border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300">
+                        <select className="w-full px-4 py-2 border capitalize border-gray-400 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300">
                             <option value="Solo Trader">Solo Trader</option>
                             <option value="Partnership">Partnership</option>
                             <option value="Limited Liability Partnership">Limited Liability Partnership</option>
@@ -130,7 +130,7 @@ const ProfileDetails = () => {
                         <label className="block text-sm font-medium text-gray-700">
                             Employers <span className="text-red-500">*</span>
                         </label>
-                        <select className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300">
+                        <select className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300">
                             <option value="2-5">2-5</option>
                             <option value="5-10">5-10</option>
                             <option value="10-15">10-15</option>
@@ -148,7 +148,7 @@ const ProfileDetails = () => {
                     <input
                         type="text"
                         placeholder="Last Name"
-                        className="w-full px-4 py-2 border border-gray-400 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
+                        className="w-full px-4 py-2 border border-gray-300 bg-gray-50 rounded focus:outline-none focus:ring-1 focus:ring-blue-300"
                     />
                 </div>
                 <button

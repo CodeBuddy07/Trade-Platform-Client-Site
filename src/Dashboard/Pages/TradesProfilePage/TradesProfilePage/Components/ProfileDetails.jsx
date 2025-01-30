@@ -28,10 +28,10 @@ const ProfileDetails = () => {
 
 
     return (
-        <div className="space-y-10 px-20 ">
+        <div className="space-y-10 lg:px-20 ">
 
             {/* Image Upload */}
-            <div className="flex  gap-10">
+            <div className="flex flex-col lg:flex-row gap-10">
                 <div>
                     <div className="flex justify-center items-center  relative">
                         <div className="relative group border w-40 h-40">

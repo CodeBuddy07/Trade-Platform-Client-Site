@@ -42,7 +42,7 @@ const Dashboard = () => {
             <h2 className="text-2xl font-semibold">Welcome ....</h2>
             <FaUserCircle size={30} className="text-gray-600" />
           </div>
-          <div className="mt-4 p-10 rounded-lg ">
+          <div className="mt-4 md:p-10 rounded-lg ">
             <Outlet />
           </div>
         </main>

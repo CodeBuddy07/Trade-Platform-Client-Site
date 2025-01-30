@@ -1,7 +1,7 @@
 import ProfileCompletion from './ProfileCompletion'
 const ProfileHeader = () => {
     return (
-        <div className="flex p-10 shadow-md rounded-md  bg-white items-center gap-10">
+        <div className="flex p-10 flex-col lg:flex-row shadow-md rounded-md  bg-white items-center gap-10">
 
           <ProfileCompletion progress={70}/>
 

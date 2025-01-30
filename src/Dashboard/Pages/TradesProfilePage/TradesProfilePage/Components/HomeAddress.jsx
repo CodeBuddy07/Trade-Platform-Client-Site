@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeAddress = () => {
     return (
-        <div className="space-y-10 px-20 bg-white p-10">
+        <div className="space-y-10 lg:px-20 bg-white p-10">
 
             <div className='max-w-2xl text-center mx-auto'>
                 <p className='text-gray-500'>We'll use your home address to contact you and verify your identity. Changing your home address will require a verification check.</p>

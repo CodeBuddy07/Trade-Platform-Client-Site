@@ -18,6 +18,8 @@ import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePa
 import JobPostPage from "../Pages/JobPostPage/JobPostPage";
 import CostGuides from "../Pages/CostGuides/CostGuides";
 import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
+import JobPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobPage";
+import JobDetailsPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobDetailsPage";
 
 const Routes = createBrowserRouter([
     {
@@ -108,7 +110,15 @@ const Routes = createBrowserRouter([
             {
                 path: 'profile',
                 element: <TradesProfilePage/>
-            }
+            },
+            {
+                path: 'jobs',
+                element: <JobPage/>
+            },
+            {
+                path: 'jobs/details/:id',
+                element: <JobDetailsPage/>
+            },
         ]
     },
 

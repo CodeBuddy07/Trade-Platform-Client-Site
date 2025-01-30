@@ -1,8 +1,8 @@
 import React from "react";
 
 const ProfileCompletion = ({ progress }) => {
-  const radius = 60; // Circle radius
-  const stroke = 4; // Border thickness
+  const radius = 60; 
+  const stroke = 4; 
   const normalizedRadius = radius - stroke * 0.5;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (progress / 100) * circumference;

@@ -63,7 +63,7 @@ const JobGalleries = () => {
     };
 
     return (
-        <div className='p-10 px-32 space-y-4 rounded-md shadow-md bg-white'>
+        <div className='p-10 lg:px-32 space-y-4 rounded-md shadow-md bg-white'>
             <div className='border flex cursor-pointer hover:bg-gray-100 transition-all justify-center items-center border-dashed border-gray-600 h-40'>
                 <div className='flex flex-col items-center gap-2'>
                     <SlCloudUpload size={30} />
@@ -72,7 +72,7 @@ const JobGalleries = () => {
             </div>
             <hr className='border-gray-300' />
 
-            <div className='grid grid-cols-7 gap-4'>
+            <div className='grid md:grid-cols-4 grid-cols-2 lg:grid-cols-7 gap-4'>
                 {images.length > 0 ? (
                     images.map((img, i) => (
                         <div key={i} className="relative h-20 border group">

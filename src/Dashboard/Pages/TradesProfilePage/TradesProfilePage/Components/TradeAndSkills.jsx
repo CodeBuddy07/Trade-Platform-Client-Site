@@ -188,7 +188,7 @@ const TradeAndSkills = () => {
                                     key={index}
                                     onClick={() => handleSkillSelection(skill)}
                                     className={`${selectedSkills.includes(skill) ? "bg-gray-300 text-white" : "bg-white text-gray-700"
-                                        } border border-gray-400 px-4 p-1 m-1`}
+                                        } border border-gray-400 px-4 p-1 m-1 text-xs md:text-sm`}
                                 >
                                     <label
                                         className={`flex items-center gap-2 cursor-pointer ${selectedSkills.includes(skill) ? "text-black" : "text-gray-700"
@@ -219,7 +219,7 @@ const TradeAndSkills = () => {
                     type="submit"
                     className="px-10 py-3 text-white bg-pink-500 hover:bg-pink-600 rounded-lg shadow-md transition-all duration-200"
                 >
-                    Change Address
+                   Save
                 </button>
         </div>
     );

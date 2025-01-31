@@ -10,6 +10,12 @@ const RegistrationTrade = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [certificationPreview, setCertificationPreview] = useState("");
 
+
+// messages
+// registration er shomoy current date and time ta nite hobe kenona kobe joined hoiyece profile
+// a show korte hobe
+
+
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {

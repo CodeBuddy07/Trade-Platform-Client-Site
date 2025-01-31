@@ -1,10 +1,11 @@
 import { BsChatFill } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
+import { HiOutlineUserCircle } from "react-icons/hi2";
 import { FaQuestion } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { PiBagLight } from "react-icons/pi";
-import { MdOutlineCardMembership, MdSupportAgent } from "react-icons/md";
+import { IoBriefcaseOutline } from "react-icons/io5";
+import { MdSupportAgent } from "react-icons/md";
+import { GoCreditCard } from "react-icons/go";
 import { LiaWalletSolid } from "react-icons/lia";
 import { TbPlus } from "react-icons/tb";
 import { SlSettings } from "react-icons/sl";
@@ -19,17 +20,17 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
         {
             path: "/my-trade-account/profile",
             label: "profile",
-            icon: <CgProfile size={25} />,
+            icon: <HiOutlineUserCircle size={25} />,
         },
         {
             path: "/my-trade-account/jobs",
             label: "jobs",
-            icon: <PiBagLight size={25} />,
+            icon: <IoBriefcaseOutline size={25} />,
         },
         {
             path: "/my-trade-account/membership",
             label: "membership",
-            icon: <MdOutlineCardMembership size={25} />,
+            icon: <GoCreditCard size={25} />,
         },
         {
             path: "/my-trade-account/billing",

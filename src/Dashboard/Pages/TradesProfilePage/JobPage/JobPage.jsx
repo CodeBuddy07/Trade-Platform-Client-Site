@@ -50,20 +50,6 @@ const JobPage = () => {
   // Filtered jobs
   const filteredJobs = jobs.filter((job) => {
     return (
-
-        <div className="flex flex-wrap text-gray-700 h-screen">
-            {/* Job List (Left Section) */}
-            <div className="w-full lg:w-1/3 bg-gray-100 p-4 h-full scrollbar-thin overflow-y-auto">
-                <div className="mb-4">
-                    <input
-                        type="text"
-                        className="w-full p-2 border rounded"
-                        placeholder="Search jobs..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-                </div>
-
       (filter.category ? job.category === filter.category : true) &&
       job.price >= filter.minPrice &&
       job.price <= filter.maxPrice &&

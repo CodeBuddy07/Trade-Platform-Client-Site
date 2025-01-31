@@ -145,7 +145,7 @@ const TradeAndSkills = () => {
     };
 
     return (
-        <div className="bg-white p-10 space-y-6">
+        <div className="bg-white shadow-md rounded-md p-10 space-y-6">
             <div>
                 <label className="block text-sm font-medium text-gray-700">
                     Trade/Profession <span className="text-red-500">*</span>

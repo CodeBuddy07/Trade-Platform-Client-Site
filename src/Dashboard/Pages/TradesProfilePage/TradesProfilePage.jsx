@@ -1,52 +1,78 @@
-import React from 'react';
-import ProfileDetails from './TradesProfilePage/Components/ProfileDetails';
-import ProfileHeader from './TradesProfilePage/Components/ProfileHeader';
-import { SlCloudUpload } from 'react-icons/sl';
-import JobGalleries from './TradesProfilePage/Components/JobGalleries';
-import HomeAddress from './TradesProfilePage/Components/HomeAddress';
-import BusinessAddress from './TradesProfilePage/Components/BusinessAddress';
-import TradeAndSkills from './TradesProfilePage/Components/TradeAndSkills';
+import React, { useState } from "react";
+import ProfileDetails from "./TradesProfilePage/Components/ProfileDetails";
+import ProfileHeader from "./TradesProfilePage/Components/ProfileHeader";
+import JobGalleries from "./TradesProfilePage/Components/JobGalleries";
+import HomeAddress from "./TradesProfilePage/Components/HomeAddress";
+import BusinessAddress from "./TradesProfilePage/Components/BusinessAddress";
+import TradeAndSkills from "./TradesProfilePage/Components/TradeAndSkills";
+import { motion } from "framer-motion";
+
+const tabList = [
+  { key: "profile", label: "Profile Details" },
+  { key: "gallery", label: "Job Galleries" },
+  { key: "skills", label: "Trade & Skills" },
+  { key: "home", label: "Home Address" },
+  { key: "business", label: "Business Address" },
+];
 
 const TradesProfilePage = () => {
-    return (
-        <div className='space-y-10 text-gray-700'>
-            <ProfileHeader></ProfileHeader>
+  const [activeTab, setActiveTab] = useState("profile");
 
-            <div className='space-y-2'>
-                <h3 className="text-2xl font-bold">Profile Details</h3>
-                <div className='p-10 rounded-md shadow-md bg-white'>
-                    <ProfileDetails></ProfileDetails>
-                </div>
-            </div>
-            <div className='space-y-2'>
-                <h3 className="text-2xl font-bold">Job Galleries</h3>
-                <JobGalleries />
-            </div>
-            <div className='space-y-2'>
-                <h3 className="text-2xl font-bold">Trade and Skills</h3>
-                <TradeAndSkills />
-            </div>
+  return (
+    <div className=" mx-auto text-gray-700 p-6">
+      {/* Profile Header (Always Visible) */}
+      <ProfileHeader />
 
-            <div className='space-y-2'>
-                <h3 className="text-2xl font-bold">Home Address</h3>
-                <HomeAddress />
-            </div>
-            <div className='space-y-2'>
-                <h3 className="text-2xl font-bold">Business Address</h3>
-                <BusinessAddress />
-            </div>
+      {/* Modern Tabs Navigation */}
+      <div className="relative flex justify-start border-b border-gray-300 gap-6 overflow-x-auto mt-6">
+        {tabList.map((tab) => (
+          <button
+            key={tab.key}
+            className={`relative px-6 py-3 text-lg font-semibold transition-all duration-300 ${
+              activeTab === tab.key
+                ? "text-blue-600 bg-white rounded-md"
+                : "text-gray-500 rounded-md bg-gray-100 hover:text-blue-500"
+            }`}
+            onClick={() => setActiveTab(tab.key)}
+          >
+            {tab.label}
+            {activeTab === tab.key && (
+              <motion.div
+                layoutId="underline"
+                className="absolute left-0 right-0 bottom-0 h-[3px] bg-blue-600 rounded-full"
+              />
+            )}
+          </button>
+        ))}
+      </div>
 
+      {/* Tab Content with Smooth Transition */}
+      <motion.div
+        key={activeTab}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3 }}
+        className=" mt-6"
+      >
+        {activeTab === "profile" && <ProfileDetails />}
+        {activeTab === "gallery" && <JobGalleries />}
+        {activeTab === "skills" && <TradeAndSkills />}
+        {activeTab === "home" && <HomeAddress />}
+        {activeTab === "business" && <BusinessAddress />}
+      </motion.div>
 
-
-            <div className="flex border border-black justify-center gap-6 flex-col items-center">
-                <iframe
-                    width={200}
-                    height={200}
-                    src=" https://lottie.host/embed/c3d481de-d25f-432d-b2ec-6c0ee936203d/Jvd8p61WTp.lottie"></iframe>
-                <h4 className="text-3xl">Working on this Page</h4>
-            </div>
-        </div>
-    );
+      {/* Work in Progress Animation */}
+      <div className="flex flex-col items-center justify-center gap-6 border border-gray-300 rounded-lg p-6 mt-10">
+        <iframe
+          width={200}
+          height={200}
+          src="https://lottie.host/embed/c3d481de-d25f-432d-b2ec-6c0ee936203d/Jvd8p61WTp.lottie"
+        ></iframe>
+        <h4 className="text-2xl font-semibold">🚀 Working on this Page</h4>
+      </div>
+    </div>
+  );
 };
 
 export default TradesProfilePage;

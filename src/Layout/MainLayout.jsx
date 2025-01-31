@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import logo from "./../files/new Logo.png";
 import { IoMenuSharp } from "react-icons/io5";
 
 const MainLayout = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/how-it-works", label: "How it works" },
@@ -20,24 +25,20 @@ const MainLayout = () => {
           to={path}
           className={({ isActive }) =>
             `relative py-2 px-4 text-nowrap font-medium text-gray-700 transition-all
-                        ${isActive ? "text-green-600 bg-gray-100 rounded-md after:w-full" : "hover:text-green-600 hover:bg-gray-100 rounded-md"}
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 
-                        after:w-0 after:h-0.5 after:bg-green-600
-                        hover:after:w-full hover:after:transition-all hover:after:duration-500`
-          }
+                        ${isActive ? "text-green-600 bg-gray-100 rounded-md after:w-full" : "hover:text-green-600 hover:bg-gray-100 rounded-md"}`}
         >
           {label}
         </NavLink>
       ))}
       <NavLink
         to="/post-job"
-        className="btn border border-pink-600 text-pink-600 px-6 py-2 rounded-md transition-all hover:bg-pink-600 hover:text-white"
+        className="border border-pink-600 text-pink-600 px-6 py-2 rounded-md transition-all hover:bg-pink-600 hover:text-white"
       >
         Post a job
       </NavLink>
       <NavLink
         to="/register-as/trades-people"
-        className="btn border border-green-600 text-green-600 px-5 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
+        className="border border-green-600 text-green-600 px-5 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
       >
         Trade signup
       </NavLink>
@@ -46,75 +47,64 @@ const MainLayout = () => {
 
   return (
     <div>
-      <div className="drawer">
-        <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
-          {/* Navbar */}
-          <div className="navbar bg-white backdrop-blur-sm shadow-lg">
-            <div className="container mx-auto flex items-center justify-between px-4">
-              <div className="flex items-center">
-                <label htmlFor="my-drawer-3" className=" lg:hidden mr-5">
-                  <IoMenuSharp size={25} />
-                </label>
-                <Link to='/my-trade-account/profile'>
-                  <div className="h-20">
-                    <img
-                      src={logo}
-                      alt="Logo"
-                      className=" bg-transparent  h-full w-full  lg:block hidden mr-5"
-                    />
-                  </div>
-                </Link>
-              </div>
-              <div className="hidden lg:block">{navContent}</div>
-            </div>
+      {/* Navbar */}
+      <div className="navbar bg-white backdrop-blur-sm shadow-lg">
+        <div className="container mx-auto flex items-center justify-between px-4">
+          <div className="flex items-center">
+            <button onClick={toggleMenu} className="lg:hidden mr-5">
+              <IoMenuSharp size={25} />
+            </button>
+            <Link to='/my-trade-account/profile'>
+              <img src={logo} alt="Logo" className="h-20 bg-transparent lg:block hidden mr-5" />
+            </Link>
           </div>
-          {/* Page Content */}
-
-          <Outlet />
-
-          {/* Footer */}
-          <Footer />
-        </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu bg-white z-10 h-full w-64 p-4 space-y-2">
-            <div className="flex items-center justify-center">
-              <img src={logo} alt="Logo" className="w-36 h-auto " />
-            </div>
-            {navLinks.map(({ path, label }) => (
-              <NavLink
-                key={path}
-                to={path}
-                className={({ isActive }) =>
-                  `relative py-2  px-4 border-b font-medium transition-all 
-                                    ${isActive
-                    ? "text-green-600"
-                    : "hover:text-green-600"
-                  } 
-                                    after:content-[''] after:absolute after:bottom-0 after:left-0 
-                                    after:w-0 after:h-0.5 after:bg-green-600 
-                                    hover:after:w-full hover:after:transition-all hover:after:duration-500`
-                }
-              >
-                {label}
-              </NavLink>
-            ))}
-            <NavLink
-              to="/post-job"
-              className="btn border border-pink-600 text-pink-600 px-6 py-2 rounded-md transition-all hover:bg-pink-600 hover:text-white"
-            >
-              Post a job
-            </NavLink>
-            <NavLink
-              to="/register-as/trades-people"
-              className="btn border border-green-600 text-green-600 px-6 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
-            >
-              Trade signup
-            </NavLink>
-          </ul>
+          <div className="hidden lg:block">{navContent}</div>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50">
+          <div className="bg-white w-64 h-full p-4 shadow-lg transform transition-transform duration-300">
+            <button onClick={toggleMenu} className="absolute top-4 right-4 text-gray-600">✖</button>
+            <div className="flex items-center justify-center">
+              <img src={logo} alt="Logo" className="w-36 h-auto" />
+            </div>
+            <ul className="mt-5 space-y-2">
+              {navLinks.map(({ path, label }) => (
+                <NavLink
+                  key={path}
+                  to={path}
+                  className="block py-2 px-4 text-gray-700 hover:text-green-600 border-b"
+                  onClick={toggleMenu} // Close menu on link click
+                >
+                  {label}
+                </NavLink>
+              ))}
+              <NavLink
+                to="/post-job"
+                className="block text-center border border-pink-600 text-pink-600 px-6 py-2 rounded-md transition-all hover:bg-pink-600 hover:text-white"
+                onClick={toggleMenu}
+              >
+                Post a job
+              </NavLink>
+              <NavLink
+                to="/register-as/trades-people"
+                className="block text-center border border-green-600 text-green-600 px-6 py-2 rounded-md transition-all hover:bg-green-600 hover:text-white"
+                onClick={toggleMenu}
+              >
+                Trade signup
+              </NavLink>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Page Content */}
+      <Outlet />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

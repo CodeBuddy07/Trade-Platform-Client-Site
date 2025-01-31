@@ -1,188 +1,171 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import JobDetailsPage from './JobDetailsPage';
+import { useState } from "react";
+import { IoFilterSharp } from "react-icons/io5";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+// import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const JobPage = () => {
-    const [search, setSearch] = useState('');
-    const navigate = useNavigate();
-    const [selectedJobId, setSelectedJobId] = useState()
-    console.log(selectedJobId);
+  // Sample job data
+  const jobs = [
+    {
+      id: 1,
+      title: "Need a Web Developer for E-commerce Site",
+      date: "Jan 31, 2025",
+      category: "Web Development",
+      description:
+        "Looking for an experienced web developer to build an online store.",
+      location: "Dhaka, Bangladesh",
+      price: 20,
+      images: [
+        "https://cdn.pixabay.com/photo/2024/01/10/16/18/computer-8499917_640.jpg",
+        "https://cdn.pixabay.com/photo/2024/01/10/16/18/computer-8499917_640.jpg",
+      ], // Replace with actual image URLs
+    },
+    {
+      id: 2,
+      title: "Graphic Designer Needed for Branding",
+      date: "Jan 30, 2025",
+      category: "Graphic Design",
+      description:
+        "Need a creative designer for logo, banners, and business cards.",
+      location: "Chittagong, Bangladesh",
+      price: 15,
+      images: [
+        "https://cdn.pixabay.com/photo/2024/01/10/16/18/computer-8499917_640.jpg",
+        "https://cdn.pixabay.com/photo/2024/01/10/16/18/computer-8499917_640.jpg",
+      ], // Replace with actual image URLs
+    },
+  ];
 
-    const jobs = [
-        { 
-          id: 1, 
-          title: 'Fix Misaligned TV Aerial', 
-          location: 'Woodford Green IG8', 
-          distance: 39, 
-          postCode: 'IG8', 
-          about: 'My aerial has been moved by the high winds we have been having and it is not giving good picture.', 
-          jobCategory: 'Aerial & Satellite Dish', 
-          customerName: 'John Doe', 
-          phone: '(020) 555-1234', 
-          email: 'john.doe@email.com', 
-          postDate: '30th Jan 25 07:25',
-          postDetails: [
-            { question: "I am a...", answer: "Homeowner" },
-            { question: "What type of property is the quote for?", answer: "House" },
-            { question: "I require quotes for...", answer: "Labour & Materials" },
-            { question: "Are you ready to hire a tradesperson?", answer: "Depends on the price" },
-            { question: "When do you need the job doing?", answer: "Sometime this week" },
-            { question: "How would you prefer to be contacted by local trades?", answer: "By email" },
-            { question: "When would you prefer to be contacted?", answer: "In the afternoon" },
-            { question: "How would you rate the difficulty of the job?", answer: "Handyperson" },
-            { question: "Have you looked for a tradesperson elsewhere?", answer: "Yes" }
-          ]
-        },
-        { 
-          id: 2, 
-          title: 'Repair Faulty Kitchen Light', 
-          location: 'Manchester M2', 
-          distance: 20, 
-          postCode: 'M2', 
-          about: 'The light fixture in my kitchen has stopped working, possibly a wiring issue.', 
-          jobCategory: 'Electrical', 
-          customerName: 'Jane Smith', 
-          phone: '(0161) 555-5678', 
-          email: 'jane.smith@email.com', 
-          postDate: '30th Jan 25 08:00',
-          postDetails: [
-            { question: "I am a...", answer: "Tenant" },
-            { question: "What type of property is the quote for?", answer: "Bungalow" },
-            { question: "I require quotes for...", answer: "Labour Only" },
-            { question: "Are you ready to hire a tradesperson?", answer: "Yes, once I've compared quotes" },
-            { question: "When do you need the job doing?", answer: "Sometime this week" },
-            { question: "How would you prefer to be contacted by local trades?", answer: "By email" },
-            { question: "Do you have permission from the property owner to carry out the work?", answer: "Yes" },
-            { question: "Have you looked for a tradesperson elsewhere?", answer: "No" }
-          ]
-        },
-        { 
-          id: 3, 
-          title: 'Install Garden Fencing', 
-          location: 'Bristol BS3', 
-          distance: 50, 
-          postCode: 'BS3', 
-          about: 'I need a new fence installed in my backyard for extra privacy and security.', 
-          jobCategory: 'Gardening & Landscaping', 
-          customerName: 'Alex Brown', 
-          phone: '(0117) 555-3456', 
-          email: 'alex.brown@email.com', 
-          postDate: '29th Jan 25 18:45',
-          postDetails: [
-            { question: "I am a...", answer: "Homeowner" },
-            { question: "What type of property is the quote for?", answer: "House" },
-            { question: "I require quotes for...", answer: "Labour & Materials" },
-            { question: "Are you ready to hire a tradesperson?", answer: "Depends on the price" },
-            { question: "When do you need the job doing?", answer: "Sometime this week" },
-            { question: "How would you prefer to be contacted by local trades?", answer: "By phone" },
-            { question: "When would you prefer to be contacted?", answer: "Morning" },
-            { question: "How would you rate the difficulty of the job?", answer: "Average" },
-            { question: "Have you looked for a tradesperson elsewhere?", answer: "Yes" }
-          ]
-        },
-        { 
-          id: 4, 
-          title: 'Fix Leaky Roof', 
-          location: 'Leeds LS6', 
-          distance: 45, 
-          postCode: 'LS6', 
-          about: 'There is a leak in my roof that needs urgent repair before it gets worse during the rain.', 
-          jobCategory: 'Roofing', 
-          customerName: 'Sarah Green', 
-          phone: '(0113) 555-6789', 
-          email: 'sarah.green@email.com', 
-          postDate: '28th Jan 25 15:30',
-          postDetails: [
-            { question: "I am a...", answer: "Homeowner" },
-            { question: "What type of property is the quote for?", answer: "House" },
-            { question: "I require quotes for...", answer: "Labour & Materials" },
-            { question: "Are you ready to hire a tradesperson?", answer: "Yes" },
-            { question: "When do you need the job doing?", answer: "Urgently" },
-            { question: "How would you prefer to be contacted by local trades?", answer: "By phone" },
-            { question: "When would you prefer to be contacted?", answer: "Morning" },
-            { question: "How would you rate the difficulty of the job?", answer: "High" },
-            { question: "Have you looked for a tradesperson elsewhere?", answer: "No" }
-          ]
-        },
-        { 
-          id: 5, 
-          title: 'Install New Shower Unit', 
-          location: 'Liverpool L1', 
-          distance: 40, 
-          postCode: 'L1', 
-          about: 'I would like to replace my old shower unit with a new one for better water pressure and efficiency.', 
-          jobCategory: 'Plumbing', 
-          customerName: 'David White', 
-          phone: '(0151) 555-2345', 
-          email: 'david.white@email.com', 
-          postDate: '27th Jan 25 10:00',
-          postDetails: [
-            { question: "I am a...", answer: "Homeowner" },
-            { question: "What type of property is the quote for?", answer: "House" },
-            { question: "I require quotes for...", answer: "Labour Only" },
-            { question: "Are you ready to hire a tradesperson?", answer: "Yes, once I've compared quotes" },
-            { question: "When do you need the job doing?", answer: "Sometime this week" },
-            { question: "How would you prefer to be contacted by local trades?", answer: "By email" },
-            { question: "When would you prefer to be contacted?", answer: "Afternoon" },
-            { question: "How would you rate the difficulty of the job?", answer: "Medium" },
-            { question: "Have you looked for a tradesperson elsewhere?", answer: "Yes" }
-          ]
-        }
-      ];
-      
-    
-      
+  // State for filters
+  const [filter, setFilter] = useState({
+    category: "",
+    minPrice: 0,
+    maxPrice: 100,
+    date: "",
+  });
 
+  const navigate = useNavigate();
 
-    const handleJobClick = (jobId) => {
-        // console.log(jobId);
-        if (window.innerWidth < 1024) {
-            navigate(`/my-trade-account/jobs/details/${jobId}`);
-        }
-        else {
-            setSelectedJobId(jobId)
-        }
-    };
-
+  // Filtered jobs
+  const filteredJobs = jobs.filter((job) => {
     return (
-        <div className="flex flex-wrap text-gray-700 h-screen">
-            {/* Job List (Left Section) */}
-            <div className="w-full lg:w-1/3 bg-gray-100 p-4 h-full overflow-y-auto">
-                <div className="mb-4">
-                    <input
-                        type="text"
-                        className="w-full p-2 border rounded"
-                        placeholder="Search jobs..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-                </div>
-
-                <div className="space-y-4">
-                    {jobs
-                        .filter((job) =>
-                            job.title.toLowerCase().includes(search.toLowerCase())
-                        )
-                        .map((job) => (
-                            <div
-                                key={job.id}
-                                className="p-4 bg-white border rounded shadow cursor-pointer hover:bg-gray-200"
-                                onClick={() => handleJobClick(job?.id)}
-                            >
-                                <h3 className="text-xl font-semibold">{job.title}</h3>
-                                <p>{job.about}</p>
-                            </div>
-                        ))}
-                </div>
-            </div>
-
-            {/* Job Details (Right Section) */}
-            {/* This will only be visible on large devices */}
-            <div className="w-full lg:w-2/3 p-4 hidden lg:block">
-                <JobDetailsPage selectedJobId={selectedJobId}></JobDetailsPage>
-            </div>
-        </div>
+      (filter.category ? job.category === filter.category : true) &&
+      job.price >= filter.minPrice &&
+      job.price <= filter.maxPrice &&
+      (filter.date ? job.date === filter.date : true)
     );
+  });
+
+  return (
+    <div className="max-w-6xl mx-auto p-6 ">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-6 bg-white p-4 rounded-lg">
+        <h2 className="text-2xl font-bold">📌 Job Listings</h2>
+        <p className="text-gray-600">
+          Your Credits: <span className="font-semibold">50</span>
+        </p>
+      </div>
+
+      {/* Filter Section */}
+      <div className="bg-white p-6 rounded-lg shadow-md flex flex-wrap gap-4 items-center mb-6">
+        {/* Category Filter */}
+        <div className="flex flex-col">
+          <label className="text-gray-600 text-sm font-medium">Category</label>
+          <select
+            className="p-2 border rounded focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={filter.category}
+            onChange={(e) => setFilter({ ...filter, category: e.target.value })}
+          >
+            <option value="">All Categories</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Graphic Design">Graphic Design</option>
+          </select>
+        </div>
+
+        {/* Price Range */}
+        <div className="flex flex-col">
+          <label className="text-gray-600 text-sm font-medium">
+            Min Price (৳)
+          </label>
+          <input
+            type="number"
+            className="p-2 border rounded focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            placeholder="e.g. 1000"
+            value={filter.minPrice}
+            onChange={(e) => setFilter({ ...filter, minPrice: e.target.value })}
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label className="text-gray-600 text-sm font-medium">
+            Max Price (৳)
+          </label>
+          <input
+            type="number"
+            className="p-2 border rounded focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            placeholder="e.g. 5000"
+            value={filter.maxPrice}
+            onChange={(e) => setFilter({ ...filter, maxPrice: e.target.value })}
+          />
+        </div>
+
+        {/* Date Filter */}
+        <div className="flex flex-col">
+          <label className="text-gray-600 text-sm font-medium">
+            Posted After
+          </label>
+          <input
+            type="date"
+            className="p-2 border rounded focus:ring-2 focus:ring-blue-400 focus:outline-none"
+            value={filter.date}
+            onChange={(e) => setFilter({ ...filter, date: e.target.value })}
+          />
+        </div>
+
+        {/* Apply Filter Button */}
+        <button className="p-2 px-4 bg-blue-600 text-white rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-all mt-5">
+          <IoFilterSharp className="text-lg" /> Apply Filters
+        </button>
+      </div>
+
+      {/* Job List */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {filteredJobs.map((job) => (
+          <div key={job.id} className="p-4 bg-white shadow rounded-lg">
+            <h3 className="text-lg font-bold">{job.title}</h3>
+            <p className="text-sm text-gray-500">
+              {job.date} • {job.category}
+            </p>
+            <p className="text-gray-700 mt-2">{job.description}</p>
+            <p className="flex items-center text-gray-600 mt-2">
+              <FaMapMarkerAlt className="mr-1 text-red-500" /> {job.location}
+            </p>
+
+            {/* Job Images */}
+            <div className="flex gap-2 mt-3">
+              {job.images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt="Job"
+                  className="w-20 h-20 object-cover rounded-md"
+                />
+              ))}
+            </div>
+
+            {/* Buy Job Button */}
+            <button
+              onClick={() => navigate(`/my-trade-account/jobs/${job.id}`)}
+              className="mt-4 w-full bg-blue-600 text-white p-2 rounded flex items-center justify-center gap-2"
+            >
+              See Job ({job.price} credits)
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default JobPage;

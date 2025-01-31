@@ -7,7 +7,7 @@ const BusinessAddress = () => {
 
 
     return (
-        <div className="space-y-10 lg:px-20 bg-white p-10">
+        <div className="space-y-10 lg:px-20 bg-white shadow-md rounded-md p-10">
 
 
             <div className="flex items-center">

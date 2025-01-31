@@ -1,32 +1,47 @@
-// Import necessary icons
-import {IoMenuSharp} from "react-icons/io5";
+import { useState } from "react";
+import { IoMenuSharp } from "react-icons/io5";
+import CustomerDashBNavItem from "../Shared/CustomerDashBNavItem";
+import TradesPeopleDashBNavItem from "../Shared/TradesPeopleDashBNavItem";
+import AdminDashBNavItem from "../Shared/AdminDashBNavItem";
 
-  // Import reusable components
-  import CustomerDashBNavItem from "../Shared/CustomerDashBNavItem";
-  import TradesPeopleDashBNavItem from "../Shared/TradesPeopleDashBNavItem";
-  import AdminDashBNavItem from "../Shared/AdminDashBNavItem";
 const MobileNavbar = ({ userRole }) => {
-    return (
-      <div className="md:hidden bg-white shadow p-4">
-        <div className="flex items-center justify-between">
-          <div className="drawer">
-            <input id="drawer-toggle" type="checkbox" className="drawer-toggle" />
-            <label htmlFor="drawer-toggle" className="drawer-button btn btn-ghost">
-              <IoMenuSharp size={25} />
-            </label>
-            <div className="drawer-side">
-              <label htmlFor="drawer-toggle" className="drawer-overlay"></label>
-              <ul className="menu bg-white h-full w-64 p-4 text-gray-700 shadow-lg">
-                {userRole === "customer" && <CustomerDashBNavItem />}
-                {userRole === "trades-people" && <TradesPeopleDashBNavItem />}
-                {userRole === "admin" && <AdminDashBNavItem />}
-              </ul>
-            </div>
-          </div>
-          <h1 className="text-lg font-semibold">Dashboard</h1>
-        </div>
-      </div>
-    );
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
   };
-  
-  export default MobileNavbar;
+
+  // Dynamic component mapping
+  const roleComponentMap = {
+    customer: CustomerDashBNavItem,
+    "trades-people": TradesPeopleDashBNavItem,
+    admin: AdminDashBNavItem,
+  };
+
+  const SelectedNavComponent = roleComponentMap[userRole] || null;
+
+  return (
+    <div className="md:hidden bg-white shadow p-4">
+      <div className="flex items-center justify-between">
+        {/* Menu Button */}
+        <button onClick={toggleDrawer} className="btn btn-ghost">
+          <IoMenuSharp size={25} />
+        </button>
+
+        {/* Dashboard Title */}
+        <h1 className="text-lg font-semibold">Dashboard</h1>
+      </div>
+
+      {/* Sidebar (Mobile Menu) */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={toggleDrawer}>
+          <div className="absolute top-0 left-0 w-64 bg-white h-full p-4 shadow-lg">
+            {SelectedNavComponent && <SelectedNavComponent />}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MobileNavbar;

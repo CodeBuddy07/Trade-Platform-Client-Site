@@ -20,6 +20,7 @@ import CostGuides from "../Pages/CostGuides/CostGuides";
 import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
 import JobPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobPage";
 import JobDetailsPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobDetailsPage";
+import TradesPublicProfile from "../Pages/TradesPublicProfile/TradesPublicProfile";
 
 const Routes = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ const Routes = createBrowserRouter([
                 path: 'register-as/trades-people',
                 element: <RegistrationTrade/>
 
+            },
+            {
+                path: 'trades/profile',
+                element: <TradesPublicProfile/>
             },
             {
                 path: 'account/password-reset',
@@ -111,6 +116,7 @@ const Routes = createBrowserRouter([
                 path: 'profile',
                 element: <TradesProfilePage/>
             },
+           
             {
                 path: 'jobs',
                 element: <JobPage/>

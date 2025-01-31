@@ -147,7 +147,7 @@ const JobPage = () => {
     return (
         <div className="flex flex-wrap text-gray-700 h-screen">
             {/* Job List (Left Section) */}
-            <div className="w-full lg:w-1/3 bg-gray-100 p-4 h-full overflow-y-auto">
+            <div className="w-full lg:w-1/3 bg-gray-100 p-4 h-full scrollbar-thin overflow-y-auto">
                 <div className="mb-4">
                     <input
                         type="text"

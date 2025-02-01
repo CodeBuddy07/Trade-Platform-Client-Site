@@ -19,8 +19,12 @@ import JobPostPage from "../Pages/JobPostPage/JobPostPage";
 import CostGuides from "../Pages/CostGuides/CostGuides";
 import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
 import JobPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobPage";
-import JobDetailsPage from "../Dashboard/Pages/TradesProfilePage/JobPage/JobDetailsPage";
+import JobDetailsPage from "../Dashboard/Pages/TradesProfilePage/JobPage/Components/JobDetailsPage";
 import TradesPublicProfile from "../Pages/TradesPublicProfile/TradesPublicProfile";
+import SettingsPage from './../Dashboard/Pages/TradesProfilePage/SettingsPage/SettingsPage';
+import Account from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Components/Account";
+import Preferences from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Components/Preferences";
+import BillingPage from "../Dashboard/Pages/TradesProfilePage/BillingPage/BillingPage";
 
 const Routes = createBrowserRouter([
     {
@@ -122,9 +126,28 @@ const Routes = createBrowserRouter([
                 element: <JobPage/>
             },
             {
+                path: 'billing',
+                element: <BillingPage/>
+            },
+            {
                 path: 'jobs/:id',
                 element: <JobDetailsPage/>
             },
+            {
+                path: 'settings',
+                element: <SettingsPage/>,
+                children:[
+                    {
+                        path: 'account',
+                        element: <Account/>
+                    },
+                    {
+                        path: 'preferences',
+                        element: <Preferences/>
+                    },
+                ]
+            },
+           
         ]
     },
 

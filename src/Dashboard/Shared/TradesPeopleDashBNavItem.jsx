@@ -43,7 +43,7 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
             icon: <TbPlus size={25} />,
         },
         {
-            path: "/my-trade-account/settings",
+            path: "/my-trade-account/settings/account",
             label: "settings",
             icon: <SlSettings size={25} />,
         },

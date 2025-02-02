@@ -11,11 +11,11 @@ const RegistrationTrade = () => {
   const [certificationPreview, setCertificationPreview] = useState("");
 
 
-// messages
-// registration er shomoy current date and time ta nite hobe kenona kobe joined hoiyece profile
-// a show korte hobe
+  // messages
+  // registration er shomoy current date and time ta nite hobe kenona kobe joined hoiyece profile
+  // a show korte hobe
 
-
+  
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -219,51 +219,67 @@ const RegistrationTrade = () => {
             </span>
           </label>
           {showCompanyInput && (
-            <div className="grid md:grid-cols-2 gap-6 mt-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Company Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
+            <div>
+              <div className="grid md:grid-cols-2 gap-6 mt-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Company Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">
+                    Proof of Insurance (Upload)
+                  </label>
+                  <input
+                    type="file"
+                    accept=".jpg,.jpeg,.png"
+                    className="w-full px-4 py-2 border rounded"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Proof of Insurance (Upload)
-                </label>
-                <input
-                  type="file"
-                  accept=".jpg,.jpeg,.png"
-                  className="w-full px-4 py-2 border rounded"
-                />
-              </div>
+              <div className="mt-2">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Registration Number <span className="text-red-500"></span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Registration Number"
+                    className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                </div>
             </div>
           )}
         </div>
 
         <div className="flex w-full justify-end items-start gap-2">
-          <input type="checkbox" required className="checkbox checkbox-sm checkbox-success [--chkfg:white] text-white " />
+          <input
+            type="checkbox"
+            required
+            className="checkbox checkbox-sm checkbox-success [--chkfg:white] text-white "
+          />
           <p className="text-sm font-medium text-gray-700">
             I agree to the <span className="text-blue-600">Terms of Use</span>{" "}
             and <span className="text-blue-600">Privacy Policy.</span>
           </p>
         </div>
 
-<div className="flex justify-center">
-<button
-          type="submit"
-          className="w-max px-10 py-3 bg-green-500 text-white font-bold rounded hover:bg-green-600"
-        >
-          Register
-        </button>
-</div>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="w-max px-10 py-3 bg-green-500 text-white font-bold rounded hover:bg-green-600"
+          >
+            Register
+          </button>
+        </div>
 
         <div>
-          <p className="text-center">
-            <span className="italic">Already have account?</span>{" "}
+          <p className="text-center text-sm text-gray-700">
+            <span className="">Already have account?</span>{" "}
             <Link
               to={"/account/login"}
               className="text-green-600 hover:underline underline-offset-4 underline"

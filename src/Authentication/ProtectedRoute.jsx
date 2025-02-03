@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { toast } from 'sonner';
@@ -9,9 +9,6 @@ import { AuthContext } from './AuthProvider';
 const ProtectedRoute = ({ children, requiredRole }) => {
 
   const { isAuthenticated, userRole, isLoading, loginSuccess } = useContext(AuthContext);
-
-  loginSuccess();
-
   console.log(userRole);
 
   if(isLoading) {
@@ -20,8 +17,8 @@ const ProtectedRoute = ({ children, requiredRole }) => {
 
   // Redirect to login if not authenticated
   if (!isAuthenticated) {
-    console.log("not Authenticated")
-    return <Navigate to="/" />;
+    toast.warning("You are not authenticated.", {id: 1});
+    return <Navigate state={location.pathname} to="/account/login" />;
   }
 
   // Check user role for access control

@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { toast } from "sonner";
+import { AuthContext } from "../../Authentication/AuthProvider";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -11,6 +12,9 @@ const Login = () => {
 
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
+  const {loginSuccess} = useContext(AuthContext);
+  const location = useLocation();
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,6 +25,11 @@ const Login = () => {
             const res = await axiosSecure.post('/auth/login', {email, password, remember});
             toast.success(res.data?.message);
             setLoading(false);
+            loginSuccess();
+            console.log(location.state);
+            setTimeout(() => {
+                navigate(location?.state || '/');
+            }, 500);
          }catch(error){
              
              setLoading(false);

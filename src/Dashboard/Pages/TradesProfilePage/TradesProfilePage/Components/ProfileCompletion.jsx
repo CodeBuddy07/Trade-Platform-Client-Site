@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../../../Authentication/AuthProvider";
 
 const ProfileCompletion = ({ progress }) => {
   const radius = 60; 
@@ -6,6 +7,7 @@ const ProfileCompletion = ({ progress }) => {
   const normalizedRadius = radius - stroke * 0.5;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (progress / 100) * circumference;
+  const {user} = useContext(AuthContext);
 
   return (
     <div className="flex flex-col items-center space-y-2 relative">
@@ -44,7 +46,7 @@ const ProfileCompletion = ({ progress }) => {
         <div className="absolute w-40 h-40 rounded-full overflow-hidden">
           <img
             className="w-full h-full object-cover"
-            src="https://img.freepik.com/premium-photo/casual-young-man-shirt_146377-2992.jpg?ga=GA1.1.1916364276&semt=ais_hybrid"
+            src={user?.profileImage.url}
             alt="Profile"
           />
         </div>

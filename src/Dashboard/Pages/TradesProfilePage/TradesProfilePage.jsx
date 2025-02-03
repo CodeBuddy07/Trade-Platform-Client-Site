@@ -18,6 +18,7 @@ const tabList = [
 const TradesProfilePage = () => {
   const [activeTab, setActiveTab] = useState("profile");
 
+
   return (
     <div className=" mx-auto text-gray-700 p-6">
       {/* Profile Header (Always Visible) */}

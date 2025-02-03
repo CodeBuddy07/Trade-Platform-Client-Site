@@ -69,7 +69,7 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
                                 isSidebarOpen ? "text-center" : ""
                             } bg-gray-100 hover:bg-gray-200`}
                         >
-                            <div className="min-w-6">{icon}</div>
+                            <span className="min-w-6">{icon}</span>
                             {!isSidebarOpen && <span>{label}</span>}
                         </p>
                     </NavLink>

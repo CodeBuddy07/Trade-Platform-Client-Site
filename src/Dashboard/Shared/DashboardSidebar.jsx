@@ -40,7 +40,7 @@ const DashboardSidebar = ({ isSidebarOpen, toggleSidebar, userRole }) => {
                     {
                         userRole === "customer" ? (
                             <CustomerDashBNavItem isSidebarOpen={isSidebarOpen} />
-                        ) : userRole === "trades-people" ? (
+                        ) : userRole === "tradePerson" ? (
                             <TradesPeopleDashBNavItem isSidebarOpen={isSidebarOpen} />
                         ) : (
                             <AdminDashBNavItem isSidebarOpen={isSidebarOpen} />

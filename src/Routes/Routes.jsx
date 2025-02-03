@@ -25,6 +25,7 @@ import SettingsPage from './../Dashboard/Pages/TradesProfilePage/SettingsPage/Se
 import Account from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Components/Account";
 import Preferences from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Components/Preferences";
 import BillingPage from "../Dashboard/Pages/TradesProfilePage/BillingPage/BillingPage";
+import ProtectedRoute from "../Authentication/ProtectedRoute";
 
 const Routes = createBrowserRouter([
     {
@@ -88,7 +89,7 @@ const Routes = createBrowserRouter([
     // customer dashboard all routes
     {
         path: 'my-account',
-        element: <Dashboard/>,
+        element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard/></ProtectedRoute>,
         errorElement:<PlanningToDesign/>,
         children: [
             {
@@ -107,7 +108,7 @@ const Routes = createBrowserRouter([
     // trades-people dashboard all routes
     {
         path: 'my-trade-account',
-        element: <Dashboard/>,
+        element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard/></ProtectedRoute>,
         // errorElement:<PlanningToDesign/>,
         children: [
             {
@@ -155,7 +156,7 @@ const Routes = createBrowserRouter([
     // admin dashboard all routes
     {
         path: 'admin',
-        element: <Dashboard/>,
+        element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard/></ProtectedRoute>,
         errorElement:<PlanningToDesign/>,
         children: [
             {

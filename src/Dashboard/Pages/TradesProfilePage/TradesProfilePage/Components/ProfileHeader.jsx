@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import ProfileCompletion from './ProfileCompletion'
+import { useContext } from 'react';
+import { AuthContext } from '../../../../../Authentication/AuthProvider';
 const ProfileHeader = () => {
+
+    const {user} = useContext(AuthContext);
+
     return (
         <div className="flex p-10 flex-col lg:flex-row shadow-md rounded-md  bg-white items-center gap-10">
 
@@ -8,8 +13,7 @@ const ProfileHeader = () => {
 
             <div className="flex-1 space-y-4">
                 <div>
-                    <p className='text-gray-500'>Name: </p>
-                    <h5 className="text-2xl font-semibold">User / Company name</h5>
+                    <h5 className="text-2xl font-semibold">{user?.firstName} {user?.lastName}</h5>
 
                 </div>
                 <div>

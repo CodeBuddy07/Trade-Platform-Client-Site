@@ -1,4 +1,4 @@
-import { BsChatFill } from "react-icons/bs";
+
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { FaQuestion } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
@@ -7,8 +7,9 @@ import { IoBriefcaseOutline } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
 import { GoCreditCard } from "react-icons/go";
 import { LiaWalletSolid } from "react-icons/lia";
-import { TbPlus } from "react-icons/tb";
+import { TbMessageDots, TbPlus } from "react-icons/tb";
 import { SlSettings } from "react-icons/sl";
+import { PiShoppingCartSimpleLight } from "react-icons/pi";
 
 const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
     const Routes = [
@@ -23,9 +24,19 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
             icon: <HiOutlineUserCircle size={25} />,
         },
         {
+            path: "/my-trade-account/message",
+            label: "message",
+            icon: <TbMessageDots size={25} />,
+        },
+        {
             path: "/my-trade-account/jobs",
             label: "jobs",
             icon: <IoBriefcaseOutline size={25} />,
+        },
+        {
+            path: "/my-trade-account/credits",
+            label: "Credits",
+            icon: <PiShoppingCartSimpleLight size={25} />,
         },
         {
             path: "/my-trade-account/membership",
@@ -37,11 +48,11 @@ const TradesPeopleDashBNavItem = ({ isSidebarOpen }) => {
             label: "billing",
             icon: <LiaWalletSolid  size={25} />,
         },
-        {
-            path: "/my-trade-account/addons",
-            label: "addons",
-            icon: <TbPlus size={25} />,
-        },
+        // {
+        //     path: "/my-trade-account/addons",
+        //     label: "addons",
+        //     icon: <TbPlus size={25} />,
+        // },
         {
             path: "/my-trade-account/settings/account",
             label: "settings",

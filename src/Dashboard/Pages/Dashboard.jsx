@@ -45,7 +45,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-semibold">Welcome {user?.firstName}</h2>
           <button
             onClick={() => logOut()}
-            className="px-7 btn-sm bg-red-500 border-0 hover:bg-red-600 text-white py-1 rounded-md flex justify-center items-center gap-2"
+            className="px-7 btn-sm bg-pink-600 border-0 hover:bg-pink-700 text-white py-1 rounded-md flex justify-center items-center gap-2"
           >
             {" "}
             <FaUserCircle size={20} className="" /> Log out

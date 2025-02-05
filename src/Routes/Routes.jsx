@@ -26,12 +26,13 @@ import Account from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Component
 import Preferences from "../Dashboard/Pages/TradesProfilePage/SettingsPage/Components/Preferences";
 import BillingPage from "../Dashboard/Pages/TradesProfilePage/BillingPage/BillingPage";
 import ProtectedRoute from "../Authentication/ProtectedRoute";
+import CreditsPage from "../Dashboard/Pages/TradesProfilePage/CreditsPage/CreditsPage";
+import MembershipPage from "../Dashboard/Pages/TradesProfilePage/MembershipPage/MembershipPage";
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout/>,
-        errorElement:<PlanningToDesign/>,
         children: [
             {
                 index: true,
@@ -88,18 +89,17 @@ const Routes = createBrowserRouter([
 
     // customer dashboard all routes
     {
-        path: 'my-account',
-        element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard/></ProtectedRoute>,
-        errorElement:<PlanningToDesign/>,
+        path: 'customer',
+        element: <ProtectedRoute requiredRole={["customer"]} ><Dashboard/></ProtectedRoute>,
         children: [
+            {
+                path: 'profile',
+                element: <CustomerProfilePage/>
+            },
             {
                 path: 'dashboard',
                 element: <CustomerDashboard/>
             },
-            {
-                path: 'profile',
-                element: <CustomerProfilePage/>
-            }
         ]
     },
 
@@ -125,6 +125,14 @@ const Routes = createBrowserRouter([
             {
                 path: 'jobs',
                 element: <JobPage/>
+            },
+            {
+                path: 'credits',
+                element: <CreditsPage/>
+            },
+            {
+                path: 'membership',
+                element: <MembershipPage/>
             },
             {
                 path: 'billing',
@@ -157,7 +165,6 @@ const Routes = createBrowserRouter([
     {
         path: 'admin',
         element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard/></ProtectedRoute>,
-        errorElement:<PlanningToDesign/>,
         children: [
             {
                 path: 'dashboard',

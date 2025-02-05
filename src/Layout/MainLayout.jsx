@@ -54,7 +54,7 @@ const MainLayout = () => {
             <button onClick={toggleMenu} className="lg:hidden mr-5">
               <IoMenuSharp size={25} />
             </button>
-            <Link to='/my-trade-account/profile'>
+            <Link to='/customer/profile'>
               <img src={logo} alt="Logo" className="h-20 bg-transparent lg:block hidden mr-5" />
             </Link>
           </div>

@@ -9,7 +9,7 @@ import { AuthContext } from './AuthProvider';
 const ProtectedRoute = ({ children, requiredRole }) => {
 
   const { isAuthenticated, userRole, isLoading, loginSuccess } = useContext(AuthContext);
-  console.log(userRole);
+  console.log(isAuthenticated, userRole);
 
   if(isLoading) {
     return <LoadingScreen />;

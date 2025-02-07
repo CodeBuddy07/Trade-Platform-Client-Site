@@ -134,7 +134,7 @@ const ManageTradesPeople = () => {
                 </div>
                 <div className="">
                     <input
-                        type="search"
+                        type="search" 
                         placeholder="Search by email..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}

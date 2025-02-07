@@ -1,6 +1,9 @@
 import { BsChatFill } from "react-icons/bs";
 import { FaQuestion } from "react-icons/fa6";
+import { GoPackage } from "react-icons/go";
+import { GrUserWorker } from "react-icons/gr";
 import { HiOutlineUserCircle } from "react-icons/hi2";
+import { LiaCreditCard } from "react-icons/lia";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { PiNotebookLight, PiUsersFourThin, PiUsersThree } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
@@ -38,7 +41,17 @@ const AdminDashBNavItem = ({ isSidebarOpen }) => {
         {
             path: "/admin/manage_trades",
             label: "Manage Trades",
-            icon: <PiNotebookLight size={25} />,
+            icon: <GrUserWorker size={25} />,
+        },
+        {
+            path: "/admin/manage_credits",
+            label: "Manage Credits",
+            icon: <LiaCreditCard size={25} />,
+        },
+        {
+            path: "/admin/manage_membership_packages",
+            label: "Manage Packages",
+            icon: <GoPackage size={25} />,
         },
     ]
 

@@ -32,6 +32,8 @@ import ManageTradesPeople from "../Dashboard/Pages/AdminProfilePage/ManageTrades
 import ManageCustomers from "../Dashboard/Pages/AdminProfilePage/ManageCustomers/ManageCustomers";
 import ManageJobs from "../Dashboard/Pages/AdminProfilePage/ManageJobs/ManageJobs";
 import ManageTrades from "../Dashboard/Pages/AdminProfilePage/Manage Trades/ManageTrades";
+import ManageMembershipPackage from "../Dashboard/Pages/AdminProfilePage/ManageMembershipPackage/ManageMembershipPackage";
+import ManageCredits from "../Dashboard/Pages/AdminProfilePage/ManageCredits/ManageCredits";
 
 const Routes = createBrowserRouter([
     {
@@ -191,8 +193,20 @@ const Routes = createBrowserRouter([
                 element: <ManageJobs />
             },
             {
+                path: 'manage_jobs/:id',
+                element: <JobDetailsPage />
+            },
+            {
                 path: 'manage_trades',
                 element: <ManageTrades />
+            },
+            {
+                path: 'manage_credits',
+                element: <ManageCredits />
+            },
+            {
+                path: 'manage_membership_packages',
+                element: <ManageMembershipPackage />
             },
         ]
     },

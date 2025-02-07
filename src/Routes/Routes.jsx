@@ -13,8 +13,8 @@ import CustomerProfilePage from './../Dashboard/Pages/CustomerProfilePage/Custom
 import CustomerDashboard from "../Dashboard/Pages/CustomerProfilePage/CustomerDashboard";
 import TradesDashboard from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage/TradesDashboard";
 import TradesProfilePage from "../Dashboard/Pages/TradesProfilePage/TradesProfilePage";
-import AdminDashboard from "../Dashboard/Pages/AdminProfilePage/AdminDashboard";
-import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePage";
+import AdminDashboard from "../Dashboard/Pages/AdminProfilePage/AdminDashboard/AdminDashboard";
+import AdminProfilePage from "../Dashboard/Pages/AdminProfilePage/AdminProfilePage/AdminProfilePage";
 import JobPostPage from "../Pages/JobPostPage/JobPostPage";
 import CostGuides from "../Pages/CostGuides/CostGuides";
 import PlanningToDesign from "../Pages/ErrorPage/PlanningToDesign";
@@ -28,11 +28,15 @@ import BillingPage from "../Dashboard/Pages/TradesProfilePage/BillingPage/Billin
 import ProtectedRoute from "../Authentication/ProtectedRoute";
 import CreditsPage from "../Dashboard/Pages/TradesProfilePage/CreditsPage/CreditsPage";
 import MembershipPage from "../Dashboard/Pages/TradesProfilePage/MembershipPage/MembershipPage";
+import ManageTradesPeople from "../Dashboard/Pages/AdminProfilePage/ManageTradesPeople/ManageTradesPeople";
+import ManageCustomers from "../Dashboard/Pages/AdminProfilePage/ManageCustomers/ManageCustomers";
+import ManageJobs from "../Dashboard/Pages/AdminProfilePage/ManageJobs/ManageJobs";
+import ManageTrades from "../Dashboard/Pages/AdminProfilePage/Manage Trades/ManageTrades";
 
 const Routes = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout/>,
+        element: <MainLayout />,
         children: [
             {
                 index: true,
@@ -52,11 +56,11 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'cost-guides',
-                element: <CostGuides/>
+                element: <CostGuides />
             },
             {
                 path: 'register-as',
-                element: <AccountCategory/>,
+                element: <AccountCategory />,
             },
 
             {
@@ -66,23 +70,23 @@ const Routes = createBrowserRouter([
             },
             {
                 path: 'register-as/trades-people',
-                element: <RegistrationTrade/>
+                element: <RegistrationTrade />
 
             },
             {
                 path: 'trades/profile',
-                element: <TradesPublicProfile/>
+                element: <TradesPublicProfile />
             },
             {
                 path: 'account/password-reset',
-                element: <ResetPassword/>
+                element: <ResetPassword />
 
             },
         ]
     },
     {
         path: 'account/login',
-        element: <Login/>
+        element: <Login />
     },
 
 
@@ -90,15 +94,15 @@ const Routes = createBrowserRouter([
     // customer dashboard all routes
     {
         path: 'customer',
-        element: <ProtectedRoute requiredRole={["customer"]} ><Dashboard/></ProtectedRoute>,
+        element: <ProtectedRoute requiredRole={["customer"]} ><Dashboard /></ProtectedRoute>,
         children: [
             {
                 path: 'profile',
-                element: <CustomerProfilePage/>
+                element: <CustomerProfilePage />
             },
             {
                 path: 'dashboard',
-                element: <CustomerDashboard/>
+                element: <CustomerDashboard />
             },
         ]
     },
@@ -108,55 +112,55 @@ const Routes = createBrowserRouter([
     // trades-people dashboard all routes
     {
         path: 'my-trade-account',
-        element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard/></ProtectedRoute>,
+        element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard /></ProtectedRoute>,
         // errorElement:<PlanningToDesign/>,
         children: [
             {
                 path: 'dashboard',
                 // element: <TradesDashboard/>
-                element:<PlanningToDesign/>,
+                element: <PlanningToDesign />,
 
             },
             {
                 path: 'profile',
-                element: <TradesProfilePage/>
+                element: <TradesProfilePage />
             },
-           
+
             {
                 path: 'jobs',
-                element: <JobPage/>
+                element: <JobPage />
             },
             {
                 path: 'credits',
-                element: <CreditsPage/>
+                element: <CreditsPage />
             },
             {
                 path: 'membership',
-                element: <MembershipPage/>
+                element: <MembershipPage />
             },
             {
                 path: 'billing',
-                element: <BillingPage/>
+                element: <BillingPage />
             },
             {
                 path: 'jobs/:id',
-                element: <JobDetailsPage/>
+                element: <JobDetailsPage />
             },
             {
                 path: 'settings',
-                element: <SettingsPage/>,
-                children:[
+                element: <SettingsPage />,
+                children: [
                     {
                         path: 'account',
-                        element: <Account/>
+                        element: <Account />
                     },
                     {
                         path: 'preferences',
-                        element: <Preferences/>
+                        element: <Preferences />
                     },
                 ]
             },
-           
+
         ]
     },
 
@@ -164,16 +168,32 @@ const Routes = createBrowserRouter([
     // admin dashboard all routes
     {
         path: 'admin',
-        element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard/></ProtectedRoute>,
+        element: <ProtectedRoute requiredRole={["admin"]} ><Dashboard /></ProtectedRoute>,
         children: [
             {
                 path: 'dashboard',
-                element: <AdminDashboard/>
+                element: <AdminDashboard />
             },
             {
                 path: 'profile',
-                element: <AdminProfilePage/>
-            }
+                element: <AdminProfilePage />
+            },
+            {
+                path: 'manage_trades_peoples',
+                element: <ManageTradesPeople />
+            },
+            {
+                path: 'manage_customers',
+                element: <ManageCustomers />
+            },
+            {
+                path: 'manage_jobs',
+                element: <ManageJobs />
+            },
+            {
+                path: 'manage_trades',
+                element: <ManageTrades />
+            },
         ]
     },
 ])

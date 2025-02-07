@@ -1,7 +1,8 @@
 import { BsChatFill } from "react-icons/bs";
 import { FaQuestion } from "react-icons/fa6";
-import { GoHome } from "react-icons/go";
-import { IoIosArrowBack } from "react-icons/io";
+import { HiOutlineUserCircle } from "react-icons/hi2";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { PiNotebookLight, PiUsersFourThin, PiUsersThree } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
 
 
@@ -10,10 +11,35 @@ const AdminDashBNavItem = ({ isSidebarOpen }) => {
 
     const Routes = [
         {
-            path: 'admin/dashboard',
-            label: 'dashboard',
-            icon: <LuLayoutDashboard size={25} />
-        }
+            path: "/admin/dashboard",
+            label: "dashboard",
+            icon: <LuLayoutDashboard size={25} />,
+        },
+        {
+            path: "/admin/profile",
+            label: "profile",
+            icon: <HiOutlineUserCircle size={25} />,
+        },
+        {
+            path: "/admin/manage_trades_peoples",
+            label: "manage T-Peoples",
+            icon: <PiUsersThree size={25} />,
+        },
+        {
+            path: "/admin/manage_customers",
+            label: "Manage Customers",
+            icon: <PiUsersFourThin size={25} />,
+        },
+        {
+            path: "/admin/manage_jobs",
+            label: "Manage Jobs",
+            icon: <PiNotebookLight size={25} />,
+        },
+        {
+            path: "/admin/manage_trades",
+            label: "Manage Trades",
+            icon: <PiNotebookLight size={25} />,
+        },
     ]
 
 
@@ -24,7 +50,7 @@ const AdminDashBNavItem = ({ isSidebarOpen }) => {
 
 
             <div className="flex flex-col gap-3 px-4">
-                {Routes.map(({ path, label, icon }) => (
+               {Routes.map(({ path, label, icon }) => (
                     <NavLink
                         key={path}
                         to={path}
@@ -37,8 +63,9 @@ const AdminDashBNavItem = ({ isSidebarOpen }) => {
                         }
                     >
                         <p
-                            className={`md:bg-gray-100 p-1 bg-gray-300 flex items-center gap-3 md:p-2 rounded-lg ${isSidebarOpen ? "text-center" : ""
-                                } bg-gray-100 hover:bg-gray-200`}
+                            className={`md:bg-gray-100 p-1 bg-gray-300 flex items-center gap-3 md:p-2 rounded-lg ${
+                                isSidebarOpen ? "text-center" : ""
+                            } bg-gray-100 hover:bg-gray-200`}
                         >
                             <span className="min-w-6">{icon}</span>
                             {!isSidebarOpen && <span>{label}</span>}

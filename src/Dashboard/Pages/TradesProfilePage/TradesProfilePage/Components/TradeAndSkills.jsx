@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TradeAndSkills = () => {
+const TradeAndSkills = ({user}) => {
     const [selectedTrade, setSelectedTrade] = useState("Plumber");
     const [selectedSkills, setSelectedSkills] = useState([]);
 

@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import logo from "./../files/new Logo.png";
 import { IoMenuSharp } from "react-icons/io5";
+import { AuthContext } from "../Authentication/AuthProvider";
 
 const MainLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const {userRole} = useContext(AuthContext);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -54,7 +57,7 @@ const MainLayout = () => {
             <button onClick={toggleMenu} className="lg:hidden mr-5">
               <IoMenuSharp size={25} />
             </button>
-            <Link to='/customer/profile'>
+            <Link to={`/${userRole}/profile`}>
               <img src={logo} alt="Logo" className="h-20 bg-transparent lg:block hidden mr-5" />
             </Link>
           </div>

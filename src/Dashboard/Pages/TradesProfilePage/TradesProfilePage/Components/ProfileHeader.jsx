@@ -5,11 +5,12 @@ import { AuthContext } from '../../../../../Authentication/AuthProvider';
 const ProfileHeader = () => {
 
     const {user} = useContext(AuthContext);
+    console.log(user);
 
     return (
         <div className="flex p-10 flex-col lg:flex-row shadow-md rounded-md  bg-white items-center gap-10">
 
-            <ProfileCompletion progress={70} />
+            <ProfileCompletion progress={user?.profileCompletion || 0} />
 
             <div className="flex-1 space-y-4">
                 <div>
@@ -18,7 +19,7 @@ const ProfileHeader = () => {
                 </div>
                 <div>
                     <h6 className="font-semibold text-gray-500">Bio</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, id? adipisicing elit. Earum, omnis!</p>
+                    <p>{user?.bio}</p>
                 </div>
 
                 <div>

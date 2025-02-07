@@ -107,7 +107,7 @@ const Routes = createBrowserRouter([
 
     // trades-people dashboard all routes
     {
-        path: 'my-trade-account',
+        path: 'tradePerson',
         element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard/></ProtectedRoute>,
         // errorElement:<PlanningToDesign/>,
         children: [

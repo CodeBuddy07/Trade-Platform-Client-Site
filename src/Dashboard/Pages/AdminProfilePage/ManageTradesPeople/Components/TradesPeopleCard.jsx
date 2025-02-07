@@ -3,7 +3,7 @@ import { FaEye } from 'react-icons/fa';
 
 const TradesPeopleCard = ({ trade, setSelectedTrade }) => {
     return (
-        <div className="bg-gray-50 p-2 rounded-lg shadow-md hover:scale-105 duration-200 shadow-gray-400 flex items-center">
+        <div className="bg-gray-50 p-2 rounded-md shadow-md hover:scale-105 duration-200 shadow-gray-400 flex items-center">
             <img
                 src={trade?.photoUrl}
                 alt="Aaradhya Anand"
@@ -29,9 +29,9 @@ const TradesPeopleCard = ({ trade, setSelectedTrade }) => {
                     <div className='w-full mt-4'>
                         <button
                             onClick={() => setSelectedTrade(trade)}
-                            className="flex items-center gap-2 px-4 py-1 bg-gradient-to-t hover:ssc105
-                         from-gray-500 to-gray-700 text-white font-medium rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
-                            <FaEye /> View
+                            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-t hover:ssc105
+                         from-gray-500 to-gray-700 text-white text-sm font-medium rounded-sm shadow-md transition-transform transform hover:scale-105 hover:shadow-lg">
+                            <FaEye /> View details
                         </button>
                     </div>
                 </div>

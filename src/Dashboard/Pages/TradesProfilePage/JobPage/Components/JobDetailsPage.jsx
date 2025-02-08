@@ -43,6 +43,9 @@ const JobDetail = () => {
   const navigate = useNavigate();
   const [isPurchased, setIsPurchased] = useState(false);
 
+
+  const userRole = 'admin'
+
   // Find the job by ID
   const job = jobs.find((job) => job.id === parseInt(id));
 
@@ -106,7 +109,11 @@ const JobDetail = () => {
       </p>
 
       {/* Price & Purchase Section */}
-      {!isPurchased ? (
+      {userRole == 'admin' ? <div>
+
+      
+
+      </div> : !isPurchased ? (
         <button
           onClick={handleBuyJob}
           className="mt-4 w-full bg-green-600 text-white p-2 rounded-lg font-semibold"

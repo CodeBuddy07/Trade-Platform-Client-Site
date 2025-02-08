@@ -119,6 +119,8 @@ const ManageTradesPeople = () => {
     return (
         <div>
             <div className=" bg-white space-y-5 px-10 py-6">
+
+                <h4 className="text-2xl font-bold text-center mb-10">Manage Trades People</h4>
                 <div>
                     {tabs.map((tab) => (
                         <button
@@ -134,7 +136,7 @@ const ManageTradesPeople = () => {
                 </div>
                 <div className="">
                     <input
-                        type="search" 
+                        type="search"
                         placeholder="Search by email..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -143,14 +145,14 @@ const ManageTradesPeople = () => {
                     />
                 </div>
                 <h2 className='text-2xl '><span className='text-xl'>Total</span> <span className={`
-                    ${activeTab == 'active' ? 'text-green-700': activeTab == 'notVerified'? 'text-yellow-600':'text-pink-500'} font-semibold p-2 
+                    ${activeTab == 'active' ? 'text-green-700' : activeTab == 'notVerified' ? 'text-yellow-600' : 'text-pink-500'} font-semibold p-2 
                     `}>{filteredData?.length} </span><span className='text-xl'>{activeTab} account</span></h2>
 
             </div>
 
 
             <div className='bg-white mt-4 p-10'>
-               
+
                 <div className='grid grid-cols-2  gap-x-14 gap-y-4'>
                     {
                         filteredData?.length > 0 ? filteredData?.map((trade, i) => <TradesPeopleCard key={i} trade={trade} setSelectedTrade={setSelectedTrade}></TradesPeopleCard>) : <div>

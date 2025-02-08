@@ -111,8 +111,16 @@ const RegistrationTrade = () => {
           if (formData.companyName) {
             if (formData.registrationNumber) {
               if (images.insuranceImage) {
-                setLoading(false);
-                toast("Form Submitting");
+                try {
+                  const response = await axiosSecure.post("/auth/tradesperson/register", formDataToSend );
+                  toast.success(response.data.message);
+                  setLoading(false);
+                  navigate('/');
+                } catch (error) {
+                  console.log(error);
+                  setLoading(false);
+                  toast.error(error?.response?.data?.message || " Something went wrong");
+                }
               } else {
                 setLoading(false);
                 toast("Company Insurance is Required!");

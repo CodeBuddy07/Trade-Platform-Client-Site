@@ -157,7 +157,7 @@ const JobPage = () => {
 
             {/* Buy Job Button */}
             <button
-              onClick={() => navigate(`/my-trade-account/jobs/${job.id}`)}
+              onClick={() => navigate(`/tradePerson/jobs/${job.id}`)}
               className="mt-4 w-full bg-blue-600 text-white p-2 rounded flex items-center justify-center gap-2"
             >
               See Job ({job.price} credits)

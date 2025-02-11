@@ -3,8 +3,8 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const SettingsPage = () => {
     const settingsNav = [
-        { path: "/my-trade-account/settings/account", label: "Account" },
-        { path: "/my-trade-account/settings/preferences", label: "Preferences" },
+        { path: "/tradePerson/settings/account", label: "Account" },
+      
     ];
 
     return (

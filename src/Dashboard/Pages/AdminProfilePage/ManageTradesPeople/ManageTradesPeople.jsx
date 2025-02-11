@@ -79,35 +79,16 @@ const ManageTradesPeople = () => {
                 "registrationNumber": "REG78901",
                 "photoUrl": "https://images.pexels.com/photos/6345317/pexels-photo-6345317.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
-        ],
-        "suspended": [
-            {
-                "firstName": "Robert",
-                "lastName": "Wilson",
-                "email": "robertwilson@example.com",
-                "phone": "7418529630",
-                "password": "PassWord963@",
-                "confirmPassword": "PassWord963@",
-                "trade": "Welder",
-                "postcode": "15975",
-                "status": "suspended",
-                "isSuspended": false,
-                "experience": "7 years",
-                "companyName": "Wilson Welding",
-                "registrationNumber": "REG15975",
-                "photoUrl": "https://images.pexels.com/photos/6345317/pexels-photo-6345317.jpeg?auto=compress&cs=tinysrgb&w=600"
-            }
         ]
+
     };
 
 
 
 
     const tabs = [
-
         { key: "active", label: "Active" },
-        { key: "notVerified", label: "notVerified" },
-        { key: "suspended", label: "Suspended" }
+        { key: "notVerified", label: "notVerified" }
     ];
 
 
@@ -153,11 +134,43 @@ const ManageTradesPeople = () => {
 
             <div className='bg-white mt-4 p-10'>
 
-                <div className='grid grid-cols-2  gap-x-14 gap-y-4'>
+                <div className=''>
                     {
-                        filteredData?.length > 0 ? filteredData?.map((trade, i) => <TradesPeopleCard key={i} trade={trade} setSelectedTrade={setSelectedTrade}></TradesPeopleCard>) : <div>
-                            <h4>No {activeTab} Trades People found</h4>
-                        </div>
+                        filteredData?.length > 0 ? filteredData?.map((trade, i) =>
+                            <div className="space-y-4">
+                                {filteredData?.length > 0 ?
+                                    filteredData?.map((customer, i) => (
+                                        <div key={i} className={`${i % 2 !== 0 ? 'bg-gray-200' : ''} flex items-center flex-col md:flex-row gap-4 justify-between p-3 border rounded-lg hover:shadow-lg transition-al`}>
+                                            <div className="flex items-center">
+
+                                                <div className="pr-4 border-r border-gray-300">
+                                                    <span className="text-xl font-medium text-gray-800">
+                                                        {i + 1}.
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <img src={customer?.photoUrl} className='w-14 h-14 object-cover' alt="" />
+                                                </div>
+                                                <div className="ml-4">
+                                                    <h3 className="text-xl font-medium text-gray-800">
+                                                        {customer.firstName} {customer?.lastName}
+                                                    </h3>
+                                                    <p className="text-sm text-gray-600">{customer?.email}</p>
+                                                </div>
+                                            </div>
+                                            <button
+
+                                                onClick={() => setSelectedCustomer(customer)}
+                                                className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg hover:bg-green-700 transition">
+                                                View details
+                                            </button>
+                                        </div>
+                                    )) : null}
+                            </div>)
+
+                            : <div>
+                                <h4>No {activeTab} Trades People found</h4>
+                            </div>
                     }
                 </div>
             </div>

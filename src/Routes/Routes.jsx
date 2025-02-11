@@ -33,6 +33,7 @@ import ManageJobs from "../Dashboard/Pages/AdminProfilePage/ManageJobs/ManageJob
 import ManageTrades from "../Dashboard/Pages/AdminProfilePage/Manage Trades/ManageTrades";
 import ManageMembershipPackage from "../Dashboard/Pages/AdminProfilePage/ManageMembershipPackage/ManageMembershipPackage";
 import ManageCredits from "../Dashboard/Pages/AdminProfilePage/ManageCredits/ManageCredits";
+import MessagePage from "../Dashboard/Pages/MessagePage/MessagePage";
 
 const Routes = createBrowserRouter([
     {
@@ -105,6 +106,10 @@ const Routes = createBrowserRouter([
                 path: 'dashboard',
                 element: <CustomerDashboard />
             },
+            {
+                path: 'message',
+                element: <MessagePage />
+            },
         ]
     },
 
@@ -113,7 +118,7 @@ const Routes = createBrowserRouter([
     // trades-people dashboard all routes
     {
         path: 'tradePerson',
-        element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard/></ProtectedRoute>,
+        element: <ProtectedRoute requiredRole={["tradePerson"]} ><Dashboard /></ProtectedRoute>,
         // errorElement:<PlanningToDesign/>,
         children: [
             {
@@ -125,6 +130,10 @@ const Routes = createBrowserRouter([
             {
                 path: 'profile',
                 element: <TradesProfilePage />
+            },
+            {
+                path: 'message',
+                element: <MessagePage />
             },
 
             {
